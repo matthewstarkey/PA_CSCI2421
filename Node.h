@@ -5,8 +5,8 @@ template<class ItemType>
 class Node
 {
 private:
-   ItemType        item; // A data item
-   Node<ItemType>* next; // Pointer to next node
+   ItemType        item;
+   Node<ItemType>* next;
    
 public:
    Node();
@@ -16,7 +16,7 @@ public:
    void setNext(Node<ItemType>* nextNodePtr);
    ItemType getItem() const ;
    Node<ItemType>* getNext() const ;
-}; // end Node
+};
 
 #include "Node.cpp"
 #endif
