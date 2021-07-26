@@ -19,6 +19,7 @@ private:
     shared_ptr<AVLTree<shared_ptr<Book>>> books;
     Stack<shared_ptr<Book>> returnedBooks;
     LinkedList<shared_ptr<Patron>> patrons;
+protected:
     shared_ptr<Book> getBookByName(string bookName);
     shared_ptr<Patron> getPatronByName(string patronName);
 
@@ -45,7 +46,7 @@ public:
     //returns book to dropoff box
     bool dropoff(shared_ptr<Book> aBook);
     //checks out book to patron OR adds patron to hold queue
-    bool checkout(shared_ptr<Patron> aPatron, string bookName);
+    bool checkout(string patronName, string bookName);
 
     ostream friend <<operator(ostream& os, Library lib);
 };

@@ -55,7 +55,23 @@ bool Library::removePatron(string patronName) {
 //returns book to dropoff box
 bool Library::dropoff(shared_ptr<Book> aBook);
 //checks out book to patron OR adds patron to hold queue
-bool Library::checkout(shared_ptr<Patron> aPatron, string bookName);
+bool Library::checkout(string patronName, string bookName) {
+    try {
+        auto patron = getPatronByName(patronName); //get patron
+        try {
+            auto book = getBookByName(bookName); //get book
+            if(!book->isAvailable()) {
+                return false;
+            }
+            book->setAvailble(false);
+            patron->checkout(book);
+        } catch (NotFoundException nf) { //if book isnt found
+            return false;
+        }
+    } catch (NotFoundException nf) { //if patron isnt found
+        return false;
+    }
+}
 
 ostream <<operator(ostream& os, Library lib) {
 
