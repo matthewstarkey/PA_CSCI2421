@@ -62,7 +62,7 @@ bool Library::checkout(string patronName, string bookName) {
             auto book = getBookByName(bookName); //get book
             if(!book->isAvailable()) {
                 return false;
-            }
+            } else; //better run than if or else...
             book->setAvailble(false);
             patron->checkout(book);
         } catch (NotFoundException nf) { //if book isnt found
@@ -71,6 +71,24 @@ bool Library::checkout(string patronName, string bookName) {
     } catch (NotFoundException nf) { //if patron isnt found
         return false;
     }
+}
+
+shared_ptr<Book> Library::getBookByName(string bookName) {
+    auto book = make_shared<Book>(bookname, "", ""); //edit if needed TODO
+    try {
+        return books.getEntry(book);
+    } catch (NotFoundException nf) {
+        throw NotFoundException("Book Doesn't Exist");
+    }
+}
+shared_ptr<Patron> Library::getPatronByName(string patronName) {
+    for(int i = 1; i <= patrons.getLength(); i++) {
+        auto patron = patrons.getEntry(i);
+        if(patron->getName().compare(patronName) == 0) { //if patronName == patron
+            return patron;
+        }
+    }
+    throw NotFoundException("Patron not found");
 }
 
 ostream <<operator(ostream& os, Library lib) {
