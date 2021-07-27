@@ -6,11 +6,12 @@
 #define PA_CSCI2421_LIBRARY_H
 #include "string"
 #include "memory"
-#include "ADTs/LinkedList.h"
 #include "Book.h"
 #include "Patron.h"
 #include "Author.h"
 #include "Date.h"
+#include "ADTs/LinkedList.h"
+#include "ADTs/NotFoundException.h"
 #include "ADTs/LinkedStack.h"
 #include "ADTs/AVLTree.h"
 class Library {
@@ -36,6 +37,7 @@ public:
     void setOfficeHours(const string &officeHours);
     //Constructors:
     Library(string name, string address, string office_hours);
+    //Constructs library from saved file.
     Library(string fileName);
     //functions:
     //adds book to library

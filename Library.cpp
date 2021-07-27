@@ -75,7 +75,11 @@ bool Library::checkout(string patronName, string bookName) {
         return false;
     }
 }
-
+/*
+ * Helper to get book by string name
+ * returns book smart ptr
+ * throws NotFoundException if book is not found
+ */
 shared_ptr<Book> Library::getBookByName(string bookName) {
     auto book = make_shared<Book>(bookname, "", ""); //edit if needed TODO
     try {
@@ -84,6 +88,11 @@ shared_ptr<Book> Library::getBookByName(string bookName) {
         throw NotFoundException("Book Doesn't Exist");
     }
 }
+/*
+ * Helper to get patron by string name
+ * returns patron smart ptr
+ * throws NotFoundException if patron is not found
+ */
 shared_ptr<Patron> Library::getPatronByName(string patronName) {
     for(int i = 1; i <= patrons.getLength(); i++) {
         auto patron = patrons.getEntry(i);
@@ -93,7 +102,9 @@ shared_ptr<Patron> Library::getPatronByName(string patronName) {
     }
     throw NotFoundException("Patron not found");
 }
-
+/*
+ * Prints library data to ostream object
+ */
 ostream <<operator(ostream& os, Library lib) {
     /*
      * FORMAT FOR LIBRARY FILE:
