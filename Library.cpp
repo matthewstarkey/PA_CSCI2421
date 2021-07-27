@@ -23,10 +23,13 @@ void Library::setOfficeHours(const string &officeHours) {
     office_hours = officeHours;
 }
 
-Library::Library(string name, string address, string office_hours {
+Library::Library(string name, string address, string office_hours) {
     this->name = name;
     this->address = address;
     this->office_hours = office_hours;
+    AVLTree<shared_ptr<Book>> books;
+    LinkedList<shared_ptr<Patron>> patrons;
+    LinkedStack<shared_ptr<Book>> returnedBooks;
 }
 Library::Library(string fileName) {
     /*
@@ -92,7 +95,36 @@ shared_ptr<Patron> Library::getPatronByName(string patronName) {
 }
 
 ostream <<operator(ostream& os, Library lib) {
-
+    /*
+     * FORMAT FOR LIBRARY FILE:
+     * NAME
+     * ADDRESS
+     * OFFICE HOURS
+     * # OF BOOKS
+     * {List of books separated by \n}
+     * # of patrons
+     * {List of patrons}
+     * (ASSUMES ALL BOOKS WILL BE AVAILABLE i.e. no patron is holding book);
+     */
+    //print basic library data
+    os << lib.getName() << std::endl;
+    os << lib.getAddress() << std::endl;
+    os << lib.getOfficeHours() << std::endl;
+    //print books
+    os << lib.books.getNumberOfNodes() << std::endl;
+    lib.books.inorderTraverse(printHelper(os)); //TODO might need to fix this printHelper
+    //print patrons
+    os << lib.patrons.getLength() << std::endl;
+    for(int i = 1; i <= lib.patrons.getLength(); i++) {
+        os << lib.patrons.getEntry(i) << std::endl;
+    }
+    //assumes all books are available...
     return os;
+}
+
+void printHelper(ostream& os,shared_ptr<Book> aBook) {
+    //assumes all books will be available when saving library
+    aBook->setAvaiable(true);
+    os << aBook << std::endl;
 }
 

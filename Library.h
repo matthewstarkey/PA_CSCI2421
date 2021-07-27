@@ -6,10 +6,12 @@
 #define PA_CSCI2421_LIBRARY_H
 #include "string"
 #include "memory"
-//#include "LinkedList.h"
-//#include "Book.h"
-//#include "Patron.h"
-//#include "Stack.h"
+#include "ADTs/LinkedList.h"
+#include "Book.h"
+#include "Patron.h"
+#include "Author.h"
+#include "Date.h"
+#include "ADTs/LinkedStack.h"
 #include "ADTs/AVLTree.h"
 class Library {
 private:
@@ -22,6 +24,7 @@ private:
 protected:
     shared_ptr<Book> getBookByName(string bookName);
     shared_ptr<Patron> getPatronByName(string patronName);
+    void printHelper(shared_ptr<Book> aBook);
 
 public:
     //getter/setters
