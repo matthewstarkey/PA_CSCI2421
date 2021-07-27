@@ -26,7 +26,9 @@ private:
 protected:
     shared_ptr<Book> getBookByName(string bookName);
     shared_ptr<Patron> getPatronByName(string patronName);
+    //helper function to print books
     void printHelper(shared_ptr<Book> aBook);
+    //helper function to search
     void Library::searchHelper(LinkedList<shared_ptr<Book>>& foundBooks,string keyword, shared_ptr<Book> aBook);
 
 public:

@@ -112,7 +112,7 @@ void Library::searchHelper(LinkedList<shared_ptr<Book>>& foundBooks,string keywo
     const std::regex txt(".*" + keyword, + ".*");
     if(aBook->isAvailable()) {
         if(regex_match(txt, aBook->getTitle())) { //if regex txt keyword matches book title
-            foundBooks.insert(books.getLength() + 1, aBook);
+            foundBooks.insert(books.getLength() + 1, aBook); //yeet
         }
     }
 }
