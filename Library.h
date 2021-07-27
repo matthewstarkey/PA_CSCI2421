@@ -6,6 +6,7 @@
 #define PA_CSCI2421_LIBRARY_H
 #include "string"
 #include "memory"
+#include "regex"
 #include "Book.h"
 #include "Patron.h"
 #include "Author.h"
@@ -26,6 +27,7 @@ protected:
     shared_ptr<Book> getBookByName(string bookName);
     shared_ptr<Patron> getPatronByName(string patronName);
     void printHelper(shared_ptr<Book> aBook);
+    void Library::searchHelper(LinkedList<shared_ptr<Book>>& foundBooks,string keyword, shared_ptr<Book> aBook);
 
 public:
     //getter/setters
@@ -52,6 +54,8 @@ public:
     bool dropoff(shared_ptr<Book> aBook);
     //checks out book to patron OR adds patron to hold queue
     bool checkout(string patronName, string bookName);
+    //searches for books containing keyword, returns linkedlist of books found
+    LinkedList<shared_ptr<Book>> search(string keyword);
 
     ostream friend <<operator(ostream& os, Library lib);
 };

@@ -102,6 +102,22 @@ shared_ptr<Patron> Library::getPatronByName(string patronName) {
     }
     throw NotFoundException("Patron not found");
 }
+
+LinkedList<shared_ptr<Book>> Library::search(string keyword) {
+    LinkedList<shared_ptr<Book>> foundBooks;
+    this->books.inorderTraverse(searchHelper(foundBooks&, keyword));
+}
+
+void Library::searchHelper(LinkedList<shared_ptr<Book>>& foundBooks,string keyword, shared_ptr<Book> aBook) {
+    const std::regex txt(".*" + keyword, + ".*");
+    if(aBook->isAvailable()) {
+        if(regex_match(txt, aBook->getTitle())) { //if regex txt keyword matches book title
+            foundBooks.insert(books.getLength() + 1, aBook);
+        }
+    }
+}
+
+
 /*
  * Prints library data to ostream object
  */
