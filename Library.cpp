@@ -173,7 +173,7 @@ shared_ptr<Patron> Library::getPatronByName(string patronName) {
 /*
  * Prints library data to ostream object
  */
-ostream& operator<<(ostream& os, const Library& lib) {
+ostream& operator<<(ostream& os, Library& lib) {
     /*
      * FORMAT FOR LIBRARY FILE:
      * NAME
@@ -188,10 +188,10 @@ ostream& operator<<(ostream& os, const Library& lib) {
     //print basic library data
     os << lib.name << std::endl;
     os << lib.address << std::endl;
-    os << lib.office_hours << std::endl;
+    os << lib.office_hours<< std::endl;
     //print books
     os << lib.books->getNumberOfNodes() << std::endl;
-    //lib.books->inorderTraverse(lib.printHelper(os)); /**TODO might need to fix this printHelper
+    lib.books->inorderTraverse(lib.printHelper(os)); //TODO might need to fix this printHelper
     //print patrons
     os << lib.patrons.getLength() << std::endl;
     for(int i = 1; i <= lib.patrons.getLength(); i++) {
@@ -201,9 +201,30 @@ ostream& operator<<(ostream& os, const Library& lib) {
     return os;
 }
 
+void Library::emptyReturn() {
+    while(!returnedBooks.isEmpty()) {
+        auto book = returnedBooks.peek();
+        book->setAvailable(true);
+        returnedBooks.pop();
+    }
+}
+
+LinkedList<shared_ptr<Book>> Library::search(string keyword) {
+    LinkedList<shared_ptr<Book>> foundBooks;
+    this->books->inorderTraverse(searchHelper(foundBooks&, keyword));
+}
+
 void printHelper(ostream& os,shared_ptr<Book> aBook) {
     //assumes all books will be available when saving library
-    aBook->setAvailable(true);
     os << aBook << std::endl;
 }
+void Library::searchHelper(LinkedList<shared_ptr<Book>>& foundBooks,string keyword, shared_ptr<Book> aBook) {
+    const std::regex txt(".*" + keyword + ".*");
+    if(aBook->getAvailability()) {
+        if(regex_match(txt, aBook->getTitle())) { //if regex txt keyword matches book title
+            foundBooks.insert(foundBooks.getLength() + 1, aBook); //yeet
+        }
+    }
+}
+
 

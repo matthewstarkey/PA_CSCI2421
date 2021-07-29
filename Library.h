@@ -55,7 +55,7 @@ public:
     //removes patron from list
     bool removePatron(string patronName);
     //returns book to dropoff box
-    bool dropoff(shared_ptr<Book> aBook, shared_ptr<Patron> aPatron);
+    bool dropoff(string bookName, string patronName);
     //checks out book to patron OR adds patron to hold queue
     bool checkout(string patronName, string bookName);
     //searches for books containing keyword, returns linkedlist of books found
