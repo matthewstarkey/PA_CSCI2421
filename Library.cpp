@@ -48,15 +48,28 @@ bool Library::removeBook(string bookName) {
 }
 //add patron to patron list (able to checkout books and put on hold)
 bool Library::addPatron(shared_ptr<Patron> aPatron) {
-    return patrons.add(aPatron);
+    return patrons.insert(patrons.getLength() + 1, aPatron);
 }
 //removes patron from list
 bool Library::removePatron(string patronName) {
-    auto aPatron = getPatronByName(patronName);
-    return patrons.remove(aPatron);
+    try {
+        auto aPatron = getPatronByName(patronName);
+    } catch (NotFoundException nf) {
+        return false;
+    }
+    for(int i = 1; i <= patrons.getLength(); i++) {
+        auto patron = patrons.getEntry(i);
+        if(patron == aPatron) {
+            patrons.remove(i);
+            return true;
+        }
+    }
+    return false;
 }
 //returns book to dropoff box
-bool Library::dropoff(shared_ptr<Book> aBook);
+bool Library::dropoff(shared_ptr<Book> aBook) {
+    //TODO
+}
 //checks out book to patron OR adds patron to hold queue
 bool Library::checkout(string patronName, string bookName) {
     try {
@@ -112,7 +125,7 @@ void Library::searchHelper(LinkedList<shared_ptr<Book>>& foundBooks,string keywo
     const std::regex txt(".*" + keyword, + ".*");
     if(aBook->isAvailable()) {
         if(regex_match(txt, aBook->getTitle())) { //if regex txt keyword matches book title
-            foundBooks.insert(books.getLength() + 1, aBook); //yeet
+            foundBooks.insert(foundBooks.getLength() + 1, aBook); //yeet
         }
     }
 }
