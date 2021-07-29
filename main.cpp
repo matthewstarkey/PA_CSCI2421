@@ -3,6 +3,7 @@
 // This is the main running program for the Library class
 //
 #include <iostream>
+#include "Book.h"
 
 int main() {
     std::cout << "Hello World" << std::endl;
