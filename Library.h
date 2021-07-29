@@ -4,6 +4,8 @@
 
 #ifndef PA_CSCI2421_LIBRARY_H
 #define PA_CSCI2421_LIBRARY_H
+#include <iostream>
+#include <fstream>
 #include "string"
 #include "memory"
 #include "regex"
@@ -36,7 +38,7 @@ public:
     string getName();
     void setName(const string &aName);
     string getAddress();
-    void setAddress(const string  anAddress);
+    void setAddress(const string  &anAddress);
     string getOfficeHours();
     void setOfficeHours(const string &officeHours);
     //Constructors:
@@ -53,7 +55,7 @@ public:
     //removes patron from list
     bool removePatron(string patronName);
     //returns book to dropoff box
-    bool dropoff(shared_ptr<Book> aBook);
+    bool dropoff(shared_ptr<Book> aBook, shared_ptr<Patron> aPatron);
     //checks out book to patron OR adds patron to hold queue
     bool checkout(string patronName, string bookName);
     //searches for books containing keyword, returns linkedlist of books found
