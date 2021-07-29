@@ -22,7 +22,7 @@ private:
     string name;
     string address;
     string office_hours;
-    AVLTree<shared_ptr<Book>> books;
+    shared_ptr<AVLTree<shared_ptr<Book>>> books;
     LinkedStack<shared_ptr<Book>> returnedBooks;
     LinkedList<shared_ptr<Patron>> patrons;
 protected:
@@ -61,7 +61,7 @@ public:
     //searches for books containing keyword, returns linkedlist of books found
     LinkedList<shared_ptr<Book>> search(string keyword);
 
-    friend ostream operator<<(ostream& os, Library lib);
+    friend ostream operator<<(ostream& os, Library& lib);
 };
 
 #include "Library.cpp"
