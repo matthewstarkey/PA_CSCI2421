@@ -53,7 +53,8 @@ bool LinkedStack<ItemType>::isEmpty() const {
 
 template<class ItemType>
 bool LinkedStack<ItemType>::push(const ItemType &newItem) {
-    Node<ItemType>* newNodePtr = new Node<ItemType>(newItem, topPtr);
+   // Node<ItemType>* newNodePtr = new Node<ItemType>(newItem, topPtr);
+    auto newNodePtr = make_shared<Node<ItemType>>(newItem,topPtr);
     topPtr = newNodePtr;
     newNodePtr = nullptr;
     return true;
@@ -63,14 +64,17 @@ template<class ItemType>
 bool LinkedStack<ItemType>::pop() {
     if (!isEmpty())
     {
-     Node<ItemType> nodeToDeletePtr = topPtr;
-     topPtr = topPtr->getNext();
+        //Node<ItemType>* nodeToDeletePtr = topPtr;
+        //auto nodeToDeletePtr = make_shared<Node<ItemType>>(topPtr);
+        shared_ptr<Node<ItemType>> nodeToDeletePtr = nullptr;
+        nodeToDeletePtr = topPtr;
+        topPtr = topPtr->getNext();
 
-     nodeToDeletePtr.setNext(nullptr);
-     delete nodeToDeletePtr;
-     nodeToDeletePtr = nullptr;
+        nodeToDeletePtr->setNext(nullptr);
+        //delete nodeToDeletePtr;
+        nodeToDeletePtr = nullptr;
 
-     return true;
+        return true;
     }
     return false;
 }
@@ -80,5 +84,5 @@ ItemType LinkedStack<ItemType>::peek() const noexcept(false) {
     if (isEmpty())
         throw (PrecondViolatedExcep("peek() called with empty stack"));
 
-    return topPtr.getItem();
+    return topPtr->getItem();
 }

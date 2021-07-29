@@ -5,6 +5,7 @@
 #ifndef PA_CSCI2421_AUTHOR_H
 #define PA_CSCI2421_AUTHOR_H
 #include <string>
+using namespace std;
 
 class Author {
 private:

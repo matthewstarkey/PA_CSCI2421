@@ -3,18 +3,18 @@
 //
 
 #include "Book.h"
-Book::Book() : title(""), isbn(""), publisher(""), isAvailable(true)  {}
+#include "Patron.h"
+
+Book::Book() : title(""), isbn(""), publisher(""), isAvailable(true)
+        , authors(make_unique<LinkedList<shared_ptr<Author>>>())
+        , holds(make_unique<LinkedQueue<shared_ptr<Patron>>>()){}
 
 Book::Book(string aTitle, string aIsbn, string aPublisher)
-    : title(aTitle), isbn(aIsbn), publisher(aPublisher) {
-    unique_ptr<LinkedQueue<shared_ptr<Patron>>> aHoldQueue;
-    unique_ptr<LinkedList<shared_ptr<Author>>> authorList;
-    authors = authorList;
-    holds = aHoldQueue;
-    isAvailable = true;
-}
+    : title(aTitle), isbn(aIsbn), publisher(aPublisher)
+    , authors(make_unique<LinkedList<shared_ptr<Author>>>())
+    , holds(make_unique<LinkedQueue<shared_ptr<Patron>>>()) {}
 
-bool Book::isAvailable() {
+bool Book::getAvailability() {
     return isAvailable;
 }
 
@@ -30,12 +30,7 @@ string Book::getPublisher() {
 shared_ptr<Date> Book::getDate() {
     return date;
 }
-unique_ptr<LinkedList<shared_ptr<Author>>> Book::getAuthors() {
-    return authors;
-}
-unique_ptr<LinkedQueue<shared_ptr<Patron>>> Book::getHoldQueue(){
-    return holds;
-}
+
 shared_ptr<Patron> Book::getNextHold() {
     return holds->peekFront();
 }
@@ -46,16 +41,21 @@ void Book::setTitle(string aTitle){
 void Book::setIsbn(string aIsbn){
     isbn = aIsbn;
 }
-void Book::setDate(Date& aDate){
+void Book::setDate(shared_ptr<Date> aDate){
     date = aDate;
 }
-void Book::addHold(Patron& aPatron) {
+void Book::addHold(shared_ptr<Patron> aPatron) {
     holds->enqueue(aPatron);
     isAvailable = false;
 }
-void Book::addAuthor(Author& anAuthor) {
-    authors.add(anAuthor);
+void Book::addAuthor(shared_ptr<Author> anAuthor) {
+    authors->insert(authors->getLength(), anAuthor);
 }
 void Book::setAvailable(bool avail){
     isAvailable = avail;
+}
+
+ostream &operator<<(ostream &os, const Book &book) {
+    os << book.title;
+    return os;
 }

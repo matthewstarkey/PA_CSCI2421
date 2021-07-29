@@ -20,7 +20,7 @@ private:
     string address;
     string office_hours;
     shared_ptr<AVLTree<shared_ptr<Book>>> books;
-    Stack<shared_ptr<Book>> returnedBooks;
+    LinkedStack<shared_ptr<Book>> returnedBooks;
     LinkedList<shared_ptr<Patron>> patrons;
 protected:
     shared_ptr<Book> getBookByName(string bookName);
@@ -53,7 +53,7 @@ public:
     //checks out book to patron OR adds patron to hold queue
     bool checkout(string patronName, string bookName);
 
-    ostream friend <<operator(ostream& os, Library lib);
+    friend ostream& operator<<(ostream& os, const Library& lib);
 };
 
 #include "Library.cpp"

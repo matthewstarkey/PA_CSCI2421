@@ -54,7 +54,7 @@ bool LinkedQueue<ItemType>::isEmpty() const {
 /**********************************************************************************************************************/
 template<class ItemType>
 bool LinkedQueue<ItemType>::enqueue(const ItemType &newEntry) {
-    /**TODO: Check chapter 14.1.2 or lectures*/
+
     auto newNode = make_shared<Node<ItemType>>(newEntry);
     if(isEmpty()) {
         frontPtr = newNode;
@@ -68,7 +68,7 @@ bool LinkedQueue<ItemType>::enqueue(const ItemType &newEntry) {
 /**********************************************************************************************************************/
 template<class ItemType>
 bool LinkedQueue<ItemType>::dequeue() {
-    /**TODO: Check chapter 14.1.2 or lectures*/
+
     bool result = false;
     if(!isEmpty()){
         auto nodeToDeletePtr = nullptr;

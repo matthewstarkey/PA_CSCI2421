@@ -5,5 +5,4 @@ set(CMAKE_CXX_STANDARD 14)
 
 include_directories(.)
 
-add_executable(PA_CSCI2421
-        main.cpp)
+add_executable(PA_CSCI2421 main.cpp)

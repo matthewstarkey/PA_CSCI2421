@@ -1,22 +1,28 @@
 #ifndef NODE_
 #define NODE_
-
+#include <memory>
 template<class ItemType>
-class Node
-{
+class Node {
 private:
-   ItemType        item;
-   Node<ItemType>* next;
-   
+    ItemType item; // A data item
+    shared_ptr<Node<ItemType>> next; // Pointer to next node
+
 public:
-   Node();
-   Node(const ItemType& anItem);
-   Node(const ItemType& anItem, Node<ItemType>* nextNodePtr);
-   void setItem(const ItemType& anItem);
-   void setNext(Node<ItemType>* nextNodePtr);
-   ItemType getItem() const ;
-   Node<ItemType>* getNext() const ;
+    explicit Node();
+
+    explicit Node(const ItemType &anItem);
+
+    Node(const ItemType &anItem, shared_ptr<Node<ItemType>> nextNodePtr);
+
+    void setItem(const ItemType &anItem);
+
+    void setNext(shared_ptr<Node<ItemType>> nextNodePtr);
+
+    ItemType getItem() const;
+
+    shared_ptr<Node<ItemType>> getNext() const;
 };
 
 #include "Node.cpp"
+
 #endif

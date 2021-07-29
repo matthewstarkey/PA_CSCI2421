@@ -3,14 +3,18 @@
 //
 
 #include "Patron.h"
+#include "Book.h"
+
 Patron::Patron(string aName, string anAddress, string aPhone)
     : name(aName), address(anAddress), phone(aPhone){}
 
 void Patron::checkout(shared_ptr<Book> aBook) {
-    if (aBook->isAvailable())
+    if (aBook->getAvailability())
         checkedOutBooks->push(aBook);
-    else
-        aBook->addHold(&this);
+    else {
+
+        aBook->addHold(shared_from_this());
+    }
 }
 void Patron::returnBook() {
     checkedOutBooks->pop();

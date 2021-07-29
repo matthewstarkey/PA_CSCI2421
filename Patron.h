@@ -6,10 +6,10 @@
 #define PA_CSCI2421_PATRON_H
 #include <string>
 #include "ADTs/LinkedStack.h"
-#include "Book.h"
-#include "Library.h"
 
-class Patron {
+class Book;
+
+class Patron : std::enable_shared_from_this<Patron> {
 private:
     string name;
     string address;
