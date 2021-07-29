@@ -79,8 +79,8 @@ bool Library::checkout(string patronName, string bookName) {
             if(!book->isAvailable()) {
                 return false;
             } else; //better run than if or else...
-            book->setAvailble(false);
             patron->checkout(book);
+            book->setAvailable(false);
         } catch (NotFoundException nf) { //if book isnt found
             return false;
         }
