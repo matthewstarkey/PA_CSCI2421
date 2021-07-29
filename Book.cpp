@@ -59,3 +59,7 @@ ostream &operator<<(ostream &os, const Book &book) {
     os << book.title;
     return os;
 }
+
+bool operator==(Book &rhs, Book& lhs) {
+    return rhs.getTitle() == lhs.getTitle();
+}

@@ -34,7 +34,59 @@ Library::Library(string name, string address, string office_hours) {
 Library::Library(string fileName) {
     /*
      * TODO: IMPLEMENT CONSTRUCTOR FROM FILE
+     * FORMAT FOR LIBRARY FILE:
+     * NAME
+     * ADDRESS
+     * OFFICE HOURS
+     * # OF BOOKS
+     * {List of books separated by \n}
+     * # of patrons
+     * {List of patrons}
+     * (ASSUMES ALL BOOKS WILL BE AVAILABLE i.e. no patron is holding book);
      */
+    ifstream file(fileName);
+    if(!file.is_open()) {
+        throw NotFoundException("Error loading file");
+    }
+    string name;
+    string addr;
+    string office_hours;
+    getline(file, name); //get name
+    getline(file, addr); //get address
+    getline(file, office_hours); //get office hours
+    Library(name,addr,office_hours);
+
+    string num_of_books;
+    getline(file, num_of_books); //get # of books
+    int numOfBooks = stoi(num_of_books);
+    for(int i = 0; i < numOfBooks; i++) { //get all book data
+        /* BOOK PRINT DATA GOE:
+         * name, isbn, publisher
+         */
+        string name;
+        string isbn;
+        string publisher;
+        getline(file, name);
+        getline(file, isbn);
+        getline(file, publisher);
+        auto book = make_shared<Book>(name,isbn,publisher);
+        this->addBook(book);
+    }
+
+    string num_of_patrons;
+    getline(file,num_of_patrons);
+    int numOfPatrons = stoi(num_of_patrons);
+    for(int i = 1; i <= numOfPatrons; i++) { //yeet
+        string name;
+        string addr;
+        string phoneNumber;
+        getline(file, name);
+        getline(file, addr);
+        getline(file, phoneNumber); //assumes no books checked out
+        auto patron = make_shared<Patron>(name,addr,phoneNumber);
+        this->addPatron(patron);
+    }
+
 }
 //functions:
 //adds book to library
@@ -64,7 +116,15 @@ bool Library::removePatron(string patronName) {
     return canRemove;
 }
 //returns book to dropoff box
-bool Library::dropoff(shared_ptr<Book> aBook){}
+bool Library::dropoff(string bookName, string patronName) {
+    try{
+        auto book = getBookByName(bookName);
+        auto patron = getPatronByName(patronName);
+        returnedBooks.push(book);
+    } catch (NotFoundException nf) {
+        return false;
+    }
+}
 //checks out book to patron OR adds patron to hold queue TODO
 bool Library::checkout(string patronName, string bookName) {
     try {

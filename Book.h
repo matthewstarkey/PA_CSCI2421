@@ -41,6 +41,7 @@ public:
     void setAvailable(bool avail);
 
     friend ostream& operator<<(ostream& os, const Book& book);
+    friend bool operator==(Book& rhs, Book& lhs);
 
 };
 

@@ -60,8 +60,10 @@ public:
     bool checkout(string patronName, string bookName);
     //searches for books containing keyword, returns linkedlist of books found
     LinkedList<shared_ptr<Book>> search(string keyword);
+    void emptyReturn();
 
-    friend ostream operator<<(ostream& os, Library& lib);
+
+    friend ostream& operator<<(ostream& os, Library& lib);
 };
 
 #include "Library.cpp"
