@@ -76,7 +76,7 @@ Library::Library(string fileName) {
     string num_of_patrons;
     getline(file,num_of_patrons);
     int numOfPatrons = stoi(num_of_patrons);
-    for(int i = 1; i <= numOfPatrons; i++) {
+    for(int i = 1; i <= numOfPatrons; i++) { //yeet
         string name;
         string addr;
         string phoneNumber;
