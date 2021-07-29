@@ -53,33 +53,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-<<<<<<< HEAD
 CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
 RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
-=======
-CMAKE_COMMAND = /Users/starkey/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake
-
-# The command to remove a file.
-RM = /Users/starkey/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
->>>>>>> origin/main
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-<<<<<<< HEAD
-CMAKE_SOURCE_DIR = "/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421"
+CMAKE_SOURCE_DIR = "/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421/cmake-build-debug"
-=======
-CMAKE_SOURCE_DIR = /Users/starkey/Desktop/CSCI2421/PA_CSCI2421
-
-# The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/starkey/Desktop/CSCI2421/PA_CSCI2421/cmake-build-debug
->>>>>>> origin/main
+CMAKE_BINARY_DIR = "/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/cmake-build-debug"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/PA_CSCI2421.dir/depend.make
@@ -92,29 +78,16 @@ include CMakeFiles/PA_CSCI2421.dir/flags.make
 
 CMakeFiles/PA_CSCI2421.dir/main.cpp.o: CMakeFiles/PA_CSCI2421.dir/flags.make
 CMakeFiles/PA_CSCI2421.dir/main.cpp.o: ../main.cpp
-<<<<<<< HEAD
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/PA_CSCI2421.dir/main.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PA_CSCI2421.dir/main.cpp.o -c "/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421/main.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/PA_CSCI2421.dir/main.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PA_CSCI2421.dir/main.cpp.o -c "/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/main.cpp"
 
 CMakeFiles/PA_CSCI2421.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PA_CSCI2421.dir/main.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421/main.cpp" > CMakeFiles/PA_CSCI2421.dir/main.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/main.cpp" > CMakeFiles/PA_CSCI2421.dir/main.cpp.i
 
 CMakeFiles/PA_CSCI2421.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PA_CSCI2421.dir/main.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421/main.cpp" -o CMakeFiles/PA_CSCI2421.dir/main.cpp.s
-=======
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/PA_CSCI2421.dir/main.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PA_CSCI2421.dir/main.cpp.o -c /Users/starkey/Desktop/CSCI2421/PA_CSCI2421/main.cpp
-
-CMakeFiles/PA_CSCI2421.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PA_CSCI2421.dir/main.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/starkey/Desktop/CSCI2421/PA_CSCI2421/main.cpp > CMakeFiles/PA_CSCI2421.dir/main.cpp.i
-
-CMakeFiles/PA_CSCI2421.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PA_CSCI2421.dir/main.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/starkey/Desktop/CSCI2421/PA_CSCI2421/main.cpp -o CMakeFiles/PA_CSCI2421.dir/main.cpp.s
->>>>>>> origin/main
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/main.cpp" -o CMakeFiles/PA_CSCI2421.dir/main.cpp.s
 
 # Object files for target PA_CSCI2421
 PA_CSCI2421_OBJECTS = \
@@ -126,11 +99,7 @@ PA_CSCI2421_EXTERNAL_OBJECTS =
 PA_CSCI2421: CMakeFiles/PA_CSCI2421.dir/main.cpp.o
 PA_CSCI2421: CMakeFiles/PA_CSCI2421.dir/build.make
 PA_CSCI2421: CMakeFiles/PA_CSCI2421.dir/link.txt
-<<<<<<< HEAD
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable PA_CSCI2421"
-=======
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable PA_CSCI2421"
->>>>>>> origin/main
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable PA_CSCI2421"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/PA_CSCI2421.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -143,10 +112,6 @@ CMakeFiles/PA_CSCI2421.dir/clean:
 .PHONY : CMakeFiles/PA_CSCI2421.dir/clean
 
 CMakeFiles/PA_CSCI2421.dir/depend:
-<<<<<<< HEAD
-	cd "/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421" "/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421" "/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421/cmake-build-debug" "/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421/cmake-build-debug" "/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421/cmake-build-debug/CMakeFiles/PA_CSCI2421.dir/DependInfo.cmake" --color=$(COLOR)
-=======
-	cd /Users/starkey/Desktop/CSCI2421/PA_CSCI2421/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/starkey/Desktop/CSCI2421/PA_CSCI2421 /Users/starkey/Desktop/CSCI2421/PA_CSCI2421 /Users/starkey/Desktop/CSCI2421/PA_CSCI2421/cmake-build-debug /Users/starkey/Desktop/CSCI2421/PA_CSCI2421/cmake-build-debug /Users/starkey/Desktop/CSCI2421/PA_CSCI2421/cmake-build-debug/CMakeFiles/PA_CSCI2421.dir/DependInfo.cmake --color=$(COLOR)
->>>>>>> origin/main
+	cd "/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy" "/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy" "/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/cmake-build-debug" "/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/cmake-build-debug" "/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/cmake-build-debug/CMakeFiles/PA_CSCI2421.dir/DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/PA_CSCI2421.dir/depend
 

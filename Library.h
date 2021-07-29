@@ -23,7 +23,7 @@ private:
     string address;
     string office_hours;
     AVLTree<shared_ptr<Book>> books;
-    Stack<shared_ptr<Book>> returnedBooks;
+    LinkedStack<shared_ptr<Book>> returnedBooks;
     LinkedList<shared_ptr<Patron>> patrons;
 protected:
     shared_ptr<Book> getBookByName(string bookName);
@@ -31,7 +31,7 @@ protected:
     //helper function to print books
     void printHelper(ostream& os, shared_ptr<Book> aBook);
     //helper function to search
-    void Library::searchHelper(LinkedList<shared_ptr<Book>>& foundBooks,string keyword, shared_ptr<Book> aBook);
+    void searchHelper(LinkedList<shared_ptr<Book>>& foundBooks,string keyword, shared_ptr<Book> aBook);
 
 public:
     //getter/setters

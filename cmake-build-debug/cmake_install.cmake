@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-# Install script for directory: /Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421
-=======
-# Install script for directory: /Users/starkey/Desktop/CSCI2421/PA_CSCI2421
->>>>>>> origin/main
+# Install script for directory: /Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -38,11 +34,7 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-<<<<<<< HEAD
   set(CMAKE_OBJDUMP "/Library/Developer/CommandLineTools/usr/bin/objdump")
-=======
-  set(CMAKE_OBJDUMP "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/objdump")
->>>>>>> origin/main
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -53,9 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-<<<<<<< HEAD
-file(WRITE "/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
-=======
-file(WRITE "/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
->>>>>>> origin/main
+file(WRITE "/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
