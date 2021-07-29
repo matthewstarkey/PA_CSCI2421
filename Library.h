@@ -61,7 +61,7 @@ public:
     //searches for books containing keyword, returns linkedlist of books found
     LinkedList<shared_ptr<Book>> search(string keyword);
 
-    ostream friend <<operator(ostream& os, Library lib);
+    friend ostream operator<<(ostream& os, Library lib);
 };
 
 #include "Library.cpp"
