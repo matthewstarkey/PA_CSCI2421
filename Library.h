@@ -17,6 +17,12 @@
 #include "ADTs/NotFoundException.h"
 #include "ADTs/LinkedStack.h"
 #include "ADTs/AVLTree.h"
+
+auto bookStackForPrinting = make_shared<LinkedStack<shared_ptr<Book>>>();
+
+void booksToPrintStack(shared_ptr<Book>& aBook){
+    bookStackForPrinting->push(aBook);
+}
 class Library {
 private:
     string name;

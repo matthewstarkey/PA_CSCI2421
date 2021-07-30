@@ -202,8 +202,17 @@ ostream& Library::operator<<(ostream& os, Library& lib) {
     os << lib.office_hours<< std::endl;
     //print books
     os << lib.books->getNumberOfNodes() << std::endl;
-    this->tempOs = os;
-    lib.books->inorderTraverse(printHelper);
+    if (!bookStackForPrinting->isEmpty()) {
+        while (!bookStackForPrinting->isEmpty())
+            bookStackForPrinting->pop();
+    }
+
+    lib.books->inorderTraverse(booksToPrintStack);//TODO might need to fix this printHelper
+
+    while (!bookStackForPrinting->isEmpty()) {
+        os << *bookStackForPrinting->peek();
+        bookStackForPrinting->pop();
+    }
     //print patrons
     os << lib.patrons.getLength() << std::endl;
     for(int i = 1; i <= lib.patrons.getLength(); i++) {
@@ -231,6 +240,7 @@ void Library::printHelper(shared_ptr<Book> aBook) {
     //assumes all books will be available when saving library
     this->tempOs << aBook << std::endl;
 }
+
 void Library::searchHelper(shared_ptr<Book> aBook) {
     const std::regex txt(".*" + this->tempKeyword + ".*");
     if(aBook->getAvailability()) {
