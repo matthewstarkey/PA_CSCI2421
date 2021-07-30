@@ -10,7 +10,7 @@ Book::Book() : title(""), isbn(""), publisher(""), isAvailable(true)
         , holds(make_unique<LinkedQueue<shared_ptr<Patron>>>()){}
 
 Book::Book(string aTitle, string aIsbn, string aPublisher)
-    : title(aTitle), isbn(aIsbn), publisher(aPublisher)
+    : title(aTitle), isbn(aIsbn), publisher(aPublisher), isAvailable(true)
     , authors(make_unique<LinkedList<shared_ptr<Author>>>())
     , holds(make_unique<LinkedQueue<shared_ptr<Patron>>>()) {}
 
@@ -49,17 +49,21 @@ void Book::addHold(shared_ptr<Patron> aPatron) {
     isAvailable = false;
 }
 void Book::addAuthor(shared_ptr<Author> anAuthor) {
-    authors->insert(authors->getLength(), anAuthor);
+    authors->insert(authors->getLength()+1, anAuthor);
 }
 void Book::setAvailable(bool avail){
     isAvailable = avail;
 }
 
 ostream &operator<<(ostream &os, const Book &book) {
-    os << book.title << " by "<< book.authors->getEntry(0)->getName() ;
+    os << book.title << " by "<< book.authors->getEntry(1)->getName() ;
     return os;
 }
 
 bool operator==(Book &rhs, Book& lhs) {
     return rhs.getTitle() == lhs.getTitle();
+}
+
+bool operator>(Book &lhs, Book &rhs) {
+    return lhs.getTitle() > rhs.getTitle();
 }

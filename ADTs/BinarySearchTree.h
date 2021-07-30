@@ -29,6 +29,7 @@ protected:
     auto removeNode (shared_ptr<BinaryNode<ItemType>> nodePtr);
     auto removeLeftmostNode(shared_ptr<BinaryNode<ItemType>> subTreePtr, ItemType& inorderSuccessor);
     auto findNode(shared_ptr<BinaryNode<ItemType>> treePtr, const ItemType& target) const;
+    auto findNodeWithPointerItems(shared_ptr<BinaryNode<ItemType>> treePtr, const ItemType& target) const;
 
 public:
     explicit BinarySearchTree();

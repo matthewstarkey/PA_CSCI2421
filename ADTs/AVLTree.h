@@ -37,6 +37,8 @@ public:
     int getHeight() const override;
     bool isEmpty() const override;
     int getNumberOfNodes() const override;
+    void inorderTraverse(void visit(ItemType&)) const override;
+    ItemType getEntryWithPointerItems(const ItemType &anEntry) const;
 
 };
 

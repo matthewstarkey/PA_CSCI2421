@@ -111,3 +111,18 @@ template<class ItemType>
 int AVLTree<ItemType>::getNumberOfNodes() const {
     return this->getNumberOfNodesHelper(rootPtr);
 }
+
+template<class ItemType>
+void AVLTree<ItemType>::inorderTraverse(void (*visit)(ItemType &)) const {
+    this->inorder(visit, rootPtr);
+}
+
+template<class ItemType>
+ItemType AVLTree<ItemType>::getEntryWithPointerItems(const ItemType& anEntry) const {
+    shared_ptr<BinaryNode<ItemType>> nodeWithEntry = this->findNodeWithPointerItems(rootPtr, anEntry);
+    if (nodeWithEntry == nullptr)
+        throw NotFoundException("Entry not found in tree.");
+    else
+        return nodeWithEntry->getItem();
+
+}

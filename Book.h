@@ -42,6 +42,8 @@ public:
 
     friend ostream& operator<<(ostream& os, const Book& book);
     friend bool operator==(Book& rhs, Book& lhs);
+    friend bool operator>(Book &lhs, Book &rhs);
+
 
 };
 

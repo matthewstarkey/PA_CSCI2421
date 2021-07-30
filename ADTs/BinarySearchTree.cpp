@@ -84,7 +84,17 @@ auto BinarySearchTree<ItemType>::findNode(shared_ptr<BinaryNode<ItemType>> treeP
         return findNode(treePtr->getLeftChildPtr(), target);
     else
         return findNode(treePtr->getRightChildPtr(), target);
-
+}
+template<class ItemType>
+auto BinarySearchTree<ItemType>::findNodeWithPointerItems(shared_ptr<BinaryNode<ItemType>> treePtr, const ItemType &target) const {
+    if (treePtr == nullptr)
+        return treePtr;
+    else if (*treePtr->getItem() == *target)
+        return treePtr;
+    else if (*treePtr->getItem() > *target)
+        return findNodeWithPointerItems(treePtr->getLeftChildPtr(), target);
+    else
+        return findNodeWithPointerItems(treePtr->getRightChildPtr(), target);
 }
 
 template<class ItemType>
@@ -155,10 +165,12 @@ void BinarySearchTree<ItemType>::clear() {
 template<class ItemType>
 ItemType BinarySearchTree<ItemType>::getEntry(const ItemType &anEntry) const noexcept(false) {
     shared_ptr<BinaryNode<ItemType>> nodeWithEntry = findNode(rootPtr, anEntry);
+
     if (nodeWithEntry == nullptr)
         throw NotFoundException("Entry not found in tree.");
     else
         return nodeWithEntry->getItem();
+
     }
 
 

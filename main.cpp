@@ -89,7 +89,8 @@ int main() {
             case 2: {
                 cout << "Printing a list of available books:" <<endl;
                 LinkedList<shared_ptr<Book>> foundBooks = library.getAvailable();
-                for (int i = 1; i < foundBooks.getLength(); i++){
+                cout << "total found books: " <<foundBooks.getLength();
+                for (int i = 1; i <= foundBooks.getLength(); i++){
                     cout << *foundBooks.getEntry(i);
                 }
                 break;
@@ -103,10 +104,16 @@ int main() {
                 }
                 break;
             }
-            case 4:
-
+            case 4:{
+                string bookName;
+                cout << "Enter the name of the book you would like to remove: " <<endl;
+                cin >> bookName;
+                if (library.removeBook(bookName))
+                    cout << bookName << " successfully removed!" << endl;
+                else
+                    cout << bookName << " not found in library." << endl;
                 break;
-
+            }
             case 5: {
                 string keyword;
                 cout << "Enter a keyword to search by: ";

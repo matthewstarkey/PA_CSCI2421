@@ -162,7 +162,7 @@ bool Library::checkout(string patronName, string bookName) {
 shared_ptr<Book> Library::getBookByName(string bookName) {
     auto book = make_shared<Book>(bookName, "", ""); //edit if needed TODO
     try {
-        return books->getEntry(book);
+        return books->getEntryWithPointerItems(book);
     } catch (NotFoundException nf) {
         throw NotFoundException("Book Doesn't Exist");
     }
