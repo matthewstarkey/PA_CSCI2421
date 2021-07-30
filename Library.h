@@ -31,15 +31,6 @@ private:
     shared_ptr<AVLTree<shared_ptr<Book>>> books;
     LinkedStack<shared_ptr<Book>> returnedBooks;
     LinkedList<shared_ptr<Patron>> patrons;
-    LinkedList<shared_ptr<Book>> tempBooks;
-    string tempKeyword;
-
-    //helper function to print books
-    void printHelper(shared_ptr<Book> aBook);
-    //helper function to search
-    void searchHelper(shared_ptr<Book> aBook);
-    void availableHelper(shared_ptr<Book> aBook);
-    void unavailableHelper(shared_ptr<Book> aBook);
 
 protected:
     shared_ptr<Book> getBookByName(string bookName);
