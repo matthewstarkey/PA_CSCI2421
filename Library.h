@@ -19,31 +19,9 @@
 #include "ADTs/AVLTree.h"
 
 auto bookStackForPrinting = make_shared<LinkedStack<shared_ptr<Book>>>();
-auto availableBooks = make_shared<LinkedList<shared_ptr<Book>>>();
-auto unavailableBooks = make_shared<LinkedList<shared_ptr<Book>>>();
-auto foundBooksFromSearch = make_shared<LinkedList<shared_ptr<Book>>>();
-string keywordForSearching;
 
 void booksToPrintStack(shared_ptr<Book>& aBook){
     bookStackForPrinting->push(aBook);
-}
-
-void booksToAvailableBooks(shared_ptr<Book>& aBook){
-    if (aBook->getAvailability())
-        availableBooks->insert(availableBooks->getLength()+1, aBook);
-}
-void booksToUnavailableBooks(shared_ptr<Book>& aBook) {
-    if (!aBook->getAvailability())
-        unavailableBooks->insert(unavailableBooks->getLength()+1, aBook);
-}
-
-void aSearchHelper(shared_ptr<Book>& aBook) {
-    const std::regex txt(keywordForSearching);
-    if(aBook->getAvailability()) {
-        if(std::regex_match(aBook->getTitle(), txt)) { //if regex txt keyword matches book title
-            foundBooksFromSearch->insert(foundBooksFromSearch->getLength() + 1, aBook); //yeet
-        }
-    }
 }
 class Library {
 private:
@@ -53,9 +31,6 @@ private:
     shared_ptr<AVLTree<shared_ptr<Book>>> books;
     LinkedStack<shared_ptr<Book>> returnedBooks;
     LinkedList<shared_ptr<Patron>> patrons;
-    LinkedList<shared_ptr<Book>> tempBooks;
-    string tempKeyword;
-
 
 protected:
     shared_ptr<Book> getBookByName(string bookName);

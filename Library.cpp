@@ -34,7 +34,6 @@ Library::Library(string name, string address, string office_hours) {
     this->books = make_shared<AVLTree<shared_ptr<Book>>>();
     this->patrons = LinkedList<shared_ptr<Patron>>();
     this->returnedBooks = LinkedStack<shared_ptr<Book>>();
-    this->tempBooks = LinkedList<shared_ptr<Book>>();
 }
 Library::Library(string fileName) {
     /*
@@ -92,7 +91,6 @@ Library::Library(string fileName) {
         this->addPatron(patron);
     }
     this->returnedBooks = LinkedStack<shared_ptr<Book>>();
-    this->tempBooks = LinkedList<shared_ptr<Book>>();
 
 }
 //functions:
@@ -132,6 +130,7 @@ bool Library::dropoff(string bookName, string patronName) {
         auto book = getBookByName(bookName);
         auto patron = getPatronByName(patronName);
         returnedBooks.push(book);
+        return true;
     } catch (NotFoundException nf) {
         return false;
     }
@@ -147,6 +146,7 @@ bool Library::checkout(string patronName, string bookName) {
             } else; //better run than if or else...
             patron->checkout(book);
             book->setAvailable(false);
+            return true;
         } catch (NotFoundException nf) { //if book isnt found
             return false;
         }
@@ -207,7 +207,7 @@ ostream& operator<<(ostream& os, Library& lib) {
             bookStackForPrinting->pop();
     }
 
-    lib.books->inorderTraverse(booksToPrintStack);//TODO might need to fix this printHelper
+    lib.books->inorderTraverse(booksToPrintStack);
 
     while (!bookStackForPrinting->isEmpty()) {
         os << *bookStackForPrinting->peek();
@@ -231,22 +231,49 @@ void Library::emptyReturn() {
 }
 
 LinkedList<shared_ptr<Book>> Library::search(string keyword) {
-    keywordForSearching = keyword;
-    foundBooksFromSearch->clear();
-    this->books->inorderTraverse(aSearchHelper);
-    return *foundBooksFromSearch;
+    auto foundBooks = LinkedList<shared_ptr<Book>>();
+    this->books->inorderTraverse(booksToPrintStack);
+    while(!bookStackForPrinting->isEmpty()) {
+        auto aBook = bookStackForPrinting->peek();
+        bookStackForPrinting->pop();
+        const std::regex txt(".*" + keyword + ".*");
+        if(aBook->getAvailability()) { //if books is available
+            if(std::regex_match(aBook->getTitle(), txt)) { //if regex txt keyword matches book title
+                foundBooks.insert(foundBooks.getLength() + 1, aBook);
+            }
+        }
+    }
+    return foundBooks;
 }
+
 
 
 LinkedList<shared_ptr<Book>> Library::getAvailable() {
-    availableBooks->clear();
-    this->books->inorderTraverse(booksToAvailableBooks);
-    return *availableBooks;
+    auto availableBooks = LinkedList<shared_ptr<Book>>();
+    this->books->inorderTraverse(booksToPrintStack);
+    while(!bookStackForPrinting->isEmpty()) {
+        auto book = bookStackForPrinting->peek();
+        bookStackForPrinting->pop();
+        if(book->getAvailability()) {
+            availableBooks.insert(availableBooks.getLength() + 1, book);
+        }
+    }
+    return availableBooks;
+
 }
 
 LinkedList<shared_ptr<Book>> Library::getUnavailable() {
-    unavailableBooks->clear();
-    this->books->inorderTraverse(booksToUnavailableBooks);
-    return *unavailableBooks;
+    auto availableBooks = LinkedList<shared_ptr<Book>>();
+    this->books->inorderTraverse(booksToPrintStack);
+    while(!bookStackForPrinting->isEmpty()) {
+        auto book = bookStackForPrinting->peek();
+        bookStackForPrinting->pop();
+        if(!book->getAvailability()) {
+            availableBooks.insert(availableBooks.getLength() + 1, book);
+        }
+    }
+    return availableBooks;
 }
+
+
 
