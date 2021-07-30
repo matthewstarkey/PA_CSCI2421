@@ -6,14 +6,13 @@
 #include "Book.h"
 
 Patron::Patron(string aName, string anAddress, string aPhone)
-    : name(aName), address(anAddress), phone(aPhone){}
+    : name(aName), address(anAddress), phone(aPhone), checkedOutBooks(make_unique<LinkedStack<shared_ptr<Book>>>()){}
 
 void Patron::checkout(shared_ptr<Book> aBook) {
     if (aBook->getAvailability())
         checkedOutBooks->push(aBook);
     else {
-
-        aBook->addHold(shared_from_this());
+       aBook->addHold(shared_from_this());
     }
 }
 void Patron::returnBook() {

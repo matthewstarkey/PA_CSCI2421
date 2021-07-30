@@ -102,7 +102,10 @@ bool Library::addBook(shared_ptr<Book> aBook) {
 bool Library::removeBook(string bookName) {
     try{
         auto aBook = getBookByName(bookName);
-        return books->remove(aBook);
+        if (aBook->getAvailability())
+            return books->remove(aBook);
+        else
+            return false;
     } catch (NotFoundException nf) {
         return false;
     }
@@ -110,7 +113,7 @@ bool Library::removeBook(string bookName) {
 }
 //add patron to patron list (able to checkout books and put on hold)
 bool Library::addPatron(shared_ptr<Patron> aPatron) {
-    return patrons.insert(patrons.getLength() ,aPatron);
+    return patrons.insert(patrons.getLength()+1 ,aPatron);
 }
 //removes patron from list
 bool Library::removePatron(string patronName) {
@@ -118,6 +121,7 @@ bool Library::removePatron(string patronName) {
     for (int i = 0; i < patrons.getLength(); i++)
     {
         if (patronName == patrons.getEntry(i)->getName()){
+            cout << "attmepting to remove patron ";
             canRemove = patrons.remove(i);
         }
     }
@@ -138,15 +142,16 @@ bool Library::dropoff(string bookName, string patronName) {
 //checks out book to patron OR adds patron to hold queue TODO
 bool Library::checkout(string patronName, string bookName) {
     try {
-        auto patron = getPatronByName(patronName); //get patron
+        auto patron = getPatronByName(patronName);//get patron
         try {
             auto book = getBookByName(bookName); //get book
             if(!book->getAvailability()) {
                 return false;
-            } else; //better run than if or else...
-            patron->checkout(book);
-            book->setAvailable(false);
-            return true;
+            } else { //better run than if or else...
+                patron->checkout(book);
+                book->setAvailable(false);
+                return true;
+            }
         } catch (NotFoundException nf) { //if book isnt found
             return false;
         }
@@ -175,7 +180,7 @@ shared_ptr<Book> Library::getBookByName(string bookName) {
 shared_ptr<Patron> Library::getPatronByName(string patronName) {
     for(int i = 1; i <= patrons.getLength(); i++) {
         auto patron = patrons.getEntry(i);
-        if(patron->getName().compare(patronName) == 0) { //if patronName == patron
+        if(patron->getName() == patronName) { //if patronName == patron
             return patron;
         }
     }

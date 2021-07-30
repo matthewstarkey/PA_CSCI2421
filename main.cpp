@@ -122,7 +122,7 @@ int main() {
                 cout << "Books found were: " << endl;
                 for (int i = 1; i <= books.getLength(); i++) {
                     auto book = books.getEntry(i);
-                    cout << book << endl;
+                    cout << *book << endl;
                 }
                 break;
             }
@@ -142,32 +142,32 @@ int main() {
                 break;
             }
             case 7: {
-                string patrons_name;
-                cout << "Enter Patron's name: " << endl;
-                cin >> patrons_name;
-                if (library.removePatron(patrons_name)) {
-                    cout << "Successfully removed patron" << endl;
-                } else {
-                    cout << "Failed to remove patron" << endl;
+                LinkedList<shared_ptr<Patron>> patrons = library.getPatrons();
+                for(int i = 1; i <= patrons.getLength(); i++) {
+                    cout << patrons.getEntry(i)->getName() << std::endl;
                 }
                 break;
             }
             case 8: {
-                auto patrons = library.getPatrons();
-                for (int i = 1; i <= patrons.getLength(); i++) {
-                    auto patron = patrons.getEntry(i);
-                    cout << i << ": " << patron << endl;
-                }
-                break;
-            }
-            case 9: {
+                /*
                 string patronName;
                 string bookName;
                 cout << "Enter Patron's name: ";
                 cin >> patronName;
                 cout << "Enter Book name: ";
                 cin >> bookName;
-                library.checkout(patronName, bookName);
+                 */
+                auto patron = make_shared<Patron>("Kai", "g","h");
+                auto book = make_shared<Book>("book", "g", "f");
+                library.addPatron(patron);
+                library.addBook(book);
+
+                library.checkout("Kai", "book");
+
+                break;
+            }
+            case 9: {
+
                 break;
             }
             case 10:
