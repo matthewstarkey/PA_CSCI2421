@@ -87,10 +87,14 @@ public:
     bool checkout(string patronName, string bookName);
     //searches for books containing keyword, returns linkedlist of books found
     LinkedList<shared_ptr<Book>> search(string keyword);
+    //empties return box, makes books available
     void emptyReturn();
-
+    //adds book on hold
+    bool addHold(string bookName, string patronName);
     LinkedList<shared_ptr<Book>> getAvailable();
     LinkedList<shared_ptr<Book>> getUnavailable();
+
+
 
 
     friend ostream& operator<<(ostream& os, Library& lib);

@@ -170,37 +170,17 @@ int main() {
                 break;
             }
             case 9: {
-                bool foundBook = false;
-                bool foundPatron = false;
-                string bookName;
-                cout << "Enter the name of the book you would like to place a hold on: " << endl;
-                cin >> bookName;
-
-                LinkedList<shared_ptr<Book>> checkedBooks = library.getUnavailable();
-                LinkedList<shared_ptr<Patron>> patrons = library.getPatrons();
-
-                for (int i = 1; i <= checkedBooks.getLength(); i++) {
-                    if (checkedBooks.getEntry(i)->getTitle() == bookName) {
-                        string patronName;
-                        cout << "Book Found! Enter the name of the Patron to place the hold: " << endl;
-                        cin >> patronName;
-                        foundBook = true;
-                        for (int j = 1; j <= patrons.getLength(); j++) {
-                            if (patrons.getEntry(j)->getName() == patronName) {
-                                cout << "Patron found! Placing hold." << endl;
-                                checkedBooks.getEntry(i)->addHold(patrons.getEntry(j));
-                                foundPatron = true;
-                                break;
-                            }
-                        }
-                    }
+                string patron_name;
+                string book_name;
+                cout << "Enter book's name: " << endl;
+                cin >> book_name;
+                cout << "Enter Patron's name: " << endl;
+                cin >> patron_name;
+                if(library.addHold(book_name,patron_name)) {
+                    cout << "Successfully put book on hold" << endl;
+                } else {
+                    cout << "Failed to put book on hold" << endl;
                 }
-                if (!foundBook)
-                    cout << "Cannot find that book in checked books. It may be available, check available books"
-                         << endl;
-                if (!foundPatron)
-                    cout << "Patron does not exist. Please add patron before placing hold." << endl;
-
                 break;
             }
             case 10: {

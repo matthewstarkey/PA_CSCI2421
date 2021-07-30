@@ -256,7 +256,16 @@ LinkedList<shared_ptr<Book>> Library::search(string keyword) {
     return *foundBooksFromSearch;
 }
 
-
+bool Library::addHold(string bookName, string patronName) {
+    try {
+        auto book = getBookByName(bookName);
+        auto patron = getPatronByName(patronName);
+        book->addHold(patron);
+        return true;
+    } catch (NotFoundException nf) {
+        return false;
+    }
+}
 
 LinkedList<shared_ptr<Book>> Library::getAvailable() {
     availableBooks->clear();
