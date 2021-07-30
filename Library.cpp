@@ -121,7 +121,6 @@ bool Library::removePatron(string patronName) {
     for (int i = 0; i < patrons.getLength(); i++)
     {
         if (patronName == patrons.getEntry(i)->getName()){
-            cout << "attmepting to remove patron ";
             canRemove = patrons.remove(i);
         }
     }
@@ -133,6 +132,7 @@ bool Library::dropoff(string bookName, string patronName) {
     try{
         auto book = getBookByName(bookName);
         auto patron = getPatronByName(patronName);
+        patron->returnBook();
         returnedBooks.push(book);
         return true;
     } catch (NotFoundException nf) {
@@ -236,49 +236,27 @@ void Library::emptyReturn() {
 }
 
 LinkedList<shared_ptr<Book>> Library::search(string keyword) {
-    auto foundBooks = LinkedList<shared_ptr<Book>>();
-    this->books->inorderTraverse(booksToPrintStack);
-    while(!bookStackForPrinting->isEmpty()) {
-        auto aBook = bookStackForPrinting->peek();
-        bookStackForPrinting->pop();
-        const std::regex txt(".*" + keyword + ".*");
-        if(aBook->getAvailability()) { //if books is available
-            if(std::regex_match(aBook->getTitle(), txt)) { //if regex txt keyword matches book title
-                foundBooks.insert(foundBooks.getLength() + 1, aBook);
-            }
-        }
-    }
-    return foundBooks;
+    keywordForSearching = keyword;
+    foundBooksFromSearch->clear();
+    this->books->inorderTraverse(aSearchHelper);
+    return *foundBooksFromSearch;
 }
 
 
 
 LinkedList<shared_ptr<Book>> Library::getAvailable() {
-    auto availableBooks = LinkedList<shared_ptr<Book>>();
-    this->books->inorderTraverse(booksToPrintStack);
-    while(!bookStackForPrinting->isEmpty()) {
-        auto book = bookStackForPrinting->peek();
-        bookStackForPrinting->pop();
-        if(book->getAvailability()) {
-            availableBooks.insert(availableBooks.getLength() + 1, book);
-        }
-    }
-    return availableBooks;
+    availableBooks->clear();
+    this->books->inorderTraverse(booksToAvailableBooks);
+    return *availableBooks;
 
 }
 
 LinkedList<shared_ptr<Book>> Library::getUnavailable() {
-    auto availableBooks = LinkedList<shared_ptr<Book>>();
-    this->books->inorderTraverse(booksToPrintStack);
-    while(!bookStackForPrinting->isEmpty()) {
-        auto book = bookStackForPrinting->peek();
-        bookStackForPrinting->pop();
-        if(!book->getAvailability()) {
-            availableBooks.insert(availableBooks.getLength() + 1, book);
-        }
-    }
-    return availableBooks;
+    unavailableBooks->clear();
+    this->books->inorderTraverse(booksToUnavailableBooks);
+    return *unavailableBooks;
 }
+
 
 
 

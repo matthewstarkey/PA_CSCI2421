@@ -149,34 +149,78 @@ int main() {
                 break;
             }
             case 8: {
-                /*
+
                 string patronName;
                 string bookName;
                 cout << "Enter Patron's name: ";
                 cin >> patronName;
                 cout << "Enter Book name: ";
                 cin >> bookName;
-                 */
-                auto patron = make_shared<Patron>("Kai", "g","h");
-                auto book = make_shared<Book>("book", "g", "f");
-                library.addPatron(patron);
-                library.addBook(book);
-
-                library.checkout("Kai", "book");
+                library.checkout(patronName, bookName);
 
                 break;
             }
             case 9: {
+                bool foundBook = false;
+                bool foundPatron = false;
+                string bookName;
+                cout << "Enter the name of the book you would like to place a hold on: " << endl;
+                cin >> bookName;
+
+                LinkedList<shared_ptr<Book>> checkedBooks = library.getUnavailable();
+                LinkedList<shared_ptr<Patron>> patrons = library.getPatrons();
+
+                for (int i =1; i<=checkedBooks.getLength(); i++) {
+                    if (checkedBooks.getEntry(i)->getTitle() == bookName){
+                        string patronName;
+                        cout << "Book Found! Enter the name of the Patron to place the hold: " <<endl;
+                        cin >>patronName;
+                        foundBook = true;
+                        for (int j =1; j<=patrons.getLength(); j++){
+                            if(patrons.getEntry(j)->getName()==patronName) {
+                                cout << "Patron found! Placing hold." <<endl;
+                                checkedBooks.getEntry(i)->addHold(patrons.getEntry(j));
+                                foundPatron = true;
+                                break;
+                            }
+                        }
+                    }
+                }
+                if(!foundBook)
+                    cout <<"Cannot find that book in checked books. It may be available, check available books" <<endl;
+                if(!foundPatron)
+                    cout <<"Patron does not exist. Please add patron before placing hold." <<endl;
 
                 break;
             }
-            case 10:
+            case 10:{
+                string bookName;
+                string patronName;
+                bool foundBook = false;
+                cout <<"Enter the name of the book to place in drop box: ";
+                cin >> bookName;
+                cout << "Enter the name of the patron dropping off the book ";
+                cin >>patronName;
+                LinkedList<shared_ptr<Book>> checkedBooks = library.getUnavailable();
+
+                for (int i =1; i<=checkedBooks.getLength(); i++) {
+                    if (checkedBooks.getEntry(i)->getTitle() == bookName){
+                        library.dropoff(bookName, patronName);
+                        foundBook = true;
+                        cout <<"Book dropped off!" <<endl;
+                    }
+                }
+                if (!foundBook)
+                    cout << "Cannot find that book in checked books." << endl;
 
                 break;
+            }
 
-            case 11:
-
+            case 11: {
+                library.emptyReturn();
+                cout << "Dropbox emptied." << endl;
                 break;
+            }
 
             case 20:
                 File << library;
