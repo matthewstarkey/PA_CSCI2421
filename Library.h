@@ -38,10 +38,12 @@ void booksToUnavailableBooks(shared_ptr<Book>& aBook) {
 }
 
 void aSearchHelper(shared_ptr<Book>& aBook) {
-    const std::regex txt(keywordForSearching);
+
+    const std::regex txt(".*" + keywordForSearching + ".*");
     if(aBook->getAvailability()) {
+
         if(std::regex_match(aBook->getTitle(), txt)) { //if regex txt keyword matches book title
-            foundBooksFromSearch->insert(foundBooksFromSearch->getLength() + 1, aBook); //yeet
+            foundBooksFromSearch->insert(foundBooksFromSearch->getLength() + 1, aBook);
         }
     }
 }
