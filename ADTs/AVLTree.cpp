@@ -102,3 +102,12 @@ template<class ItemType>
 int AVLTree<ItemType>::getHeight() const {
     return this->getHeightHelper(rootPtr);
 }
+template<class ItemType>
+bool AVLTree<ItemType>::isEmpty() const {
+    return rootPtr == nullptr;
+}
+
+template<class ItemType>
+int AVLTree<ItemType>::getNumberOfNodes() const {
+    return this->getNumberOfNodesHelper(rootPtr);
+}

@@ -35,6 +35,8 @@ public:
     bool remove(const ItemType& target) override;
     void printTree() const override;
     int getHeight() const override;
+    bool isEmpty() const override;
+    int getNumberOfNodes() const override;
 
 };
 
