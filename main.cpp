@@ -43,7 +43,6 @@ int main() {
         cout << string(20, '-') << endl;
 
         cout << "   99) Quit" << endl;
-        cout << "Enter your option [1-11 / 20 / 21 / 99]: ";
         cin >> userChoice;
 
         switch (userChoice) {
@@ -74,10 +73,13 @@ int main() {
                 int month;
                 int day;
                 int year;
-                cout << "Enter the date (using numbers) the book was published:\nMonth: ";
+
+                cout << "Enter the date (using numbers) the book was published:\nMonth(1-12): ";
                 cin >> month;
-                cout << "Day: ";
+
+                cout << "Day(1-31): ";
                 cin >> day;
+
                 cout << "Year: ";
                 cin >> year;
 
@@ -88,26 +90,26 @@ int main() {
                 break;
             }
             case 2: {
-                cout << "Printing a list of available books:" <<endl;
+                cout << "Printing a list of available books:" << endl;
                 LinkedList<shared_ptr<Book>> foundBooks = library.getAvailable();
-                cout << "total found books: " <<foundBooks.getLength();
-                for (int i = 1; i <= foundBooks.getLength(); i++){
+                cout << "total found books: " << foundBooks.getLength() << endl;
+                for (int i = 1; i <= foundBooks.getLength(); i++) {
                     cout << *foundBooks.getEntry(i);
                 }
                 break;
             }
 
-            case 3:{
-                cout << "Printing a list of checked out books:" <<endl;
+            case 3: {
+                cout << "Printing a list of checked out books:" << endl;
                 LinkedList<shared_ptr<Book>> foundBooks = library.getUnavailable();
-                for (int i = 1; i < foundBooks.getLength(); i++){
+                for (int i = 1; i <= foundBooks.getLength(); i++) {
                     cout << *foundBooks.getEntry(i);
                 }
                 break;
             }
-            case 4:{
+            case 4: {
                 string bookName;
-                cout << "Enter the name of the book you would like to remove: " <<endl;
+                cout << "Enter the name of the book you would like to remove: " << endl;
                 cin >> bookName;
                 if (library.removeBook(bookName))
                     cout << bookName << " successfully removed!" << endl;
@@ -144,7 +146,7 @@ int main() {
             }
             case 7: {
                 LinkedList<shared_ptr<Patron>> patrons = library.getPatrons();
-                for(int i = 1; i <= patrons.getLength(); i++) {
+                for (int i = 1; i <= patrons.getLength(); i++) {
                     cout << patrons.getEntry(i)->getName() << std::endl;
                 }
                 break;
@@ -177,15 +179,15 @@ int main() {
                 LinkedList<shared_ptr<Book>> checkedBooks = library.getUnavailable();
                 LinkedList<shared_ptr<Patron>> patrons = library.getPatrons();
 
-                for (int i =1; i<=checkedBooks.getLength(); i++) {
-                    if (checkedBooks.getEntry(i)->getTitle() == bookName){
+                for (int i = 1; i <= checkedBooks.getLength(); i++) {
+                    if (checkedBooks.getEntry(i)->getTitle() == bookName) {
                         string patronName;
-                        cout << "Book Found! Enter the name of the Patron to place the hold: " <<endl;
-                        cin >>patronName;
+                        cout << "Book Found! Enter the name of the Patron to place the hold: " << endl;
+                        cin >> patronName;
                         foundBook = true;
-                        for (int j =1; j<=patrons.getLength(); j++){
-                            if(patrons.getEntry(j)->getName()==patronName) {
-                                cout << "Patron found! Placing hold." <<endl;
+                        for (int j = 1; j <= patrons.getLength(); j++) {
+                            if (patrons.getEntry(j)->getName() == patronName) {
+                                cout << "Patron found! Placing hold." << endl;
                                 checkedBooks.getEntry(i)->addHold(patrons.getEntry(j));
                                 foundPatron = true;
                                 break;
@@ -193,28 +195,29 @@ int main() {
                         }
                     }
                 }
-                if(!foundBook)
-                    cout <<"Cannot find that book in checked books. It may be available, check available books" <<endl;
-                if(!foundPatron)
-                    cout <<"Patron does not exist. Please add patron before placing hold." <<endl;
+                if (!foundBook)
+                    cout << "Cannot find that book in checked books. It may be available, check available books"
+                         << endl;
+                if (!foundPatron)
+                    cout << "Patron does not exist. Please add patron before placing hold." << endl;
 
                 break;
             }
-            case 10:{
+            case 10: {
                 string bookName;
                 string patronName;
                 bool foundBook = false;
-                cout <<"Enter the name of the book to place in drop box: ";
+                cout << "Enter the name of the book to place in drop box: ";
                 cin >> bookName;
                 cout << "Enter the name of the patron dropping off the book ";
-                cin >>patronName;
+                cin >> patronName;
                 LinkedList<shared_ptr<Book>> checkedBooks = library.getUnavailable();
 
-                for (int i =1; i<=checkedBooks.getLength(); i++) {
-                    if (checkedBooks.getEntry(i)->getTitle() == bookName){
+                for (int i = 1; i <= checkedBooks.getLength(); i++) {
+                    if (checkedBooks.getEntry(i)->getTitle() == bookName) {
                         library.dropoff(bookName, patronName);
                         foundBook = true;
-                        cout <<"Book dropped off!" <<endl;
+                        cout << "Book dropped off!" << endl;
                     }
                 }
                 if (!foundBook)
@@ -229,13 +232,20 @@ int main() {
                 break;
             }
 
-            case 20:
+            case 20: {
                 File << library;
                 break;
+            }
 
-            case 21:
+            case 21: {
                 Library library(fileName);
                 break;
+            }
+
+            default:{
+                cout << "Please enter a number of a menu option." <<endl;
+                break;
+            }
 
         }
 

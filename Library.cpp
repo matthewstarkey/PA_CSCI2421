@@ -80,7 +80,8 @@ Library::Library(string fileName) {
         getline(file, publisher);
         getline(file, author);
         auto book = make_shared<Book>(name,isbn,publisher);
-        book->addAuthor(make_shared<Author>(author));
+        shared_ptr<Author> anAuthor = make_shared<Author>(author);
+        book->addAuthor(anAuthor);
         books->add(book);
     }
     /*
