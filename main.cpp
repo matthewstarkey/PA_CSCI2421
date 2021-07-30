@@ -157,7 +157,13 @@ int main() {
                 cin >> patronName;
                 cout << "Enter Book name: ";
                 cin >> bookName;
-                library.checkout(patronName, bookName);
+                if(library.checkout(patronName, bookName)) {
+                    cout << "Successfully checkout book" << endl;
+
+                } else {
+                    cout << "Failed to checkout" << endl;
+                }
+
 
                 break;
             }

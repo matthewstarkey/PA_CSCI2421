@@ -35,6 +35,7 @@ Library::Library(string name, string address, string office_hours) {
     this->patrons = LinkedList<shared_ptr<Patron>>();
     this->returnedBooks = LinkedStack<shared_ptr<Book>>();
 }
+//Throws not found exception if file doesnt exist
 Library::Library(string fileName) {
     /*
      * NAME
@@ -56,13 +57,18 @@ Library::Library(string fileName) {
     getline(file, name); //get name
     getline(file, addr); //get address
     getline(file, office_hours); //get office hours
-    Library(name,addr,office_hours);
+    this->name = name;
+    this->address = addr;
+    this->office_hours = office_hours;
+    this->books = make_shared<AVLTree<shared_ptr<Book>>>();
+    this->patrons = LinkedList<shared_ptr<Patron>>();
+    this->returnedBooks = LinkedStack<shared_ptr<Book>>();
 
     string num_of_books;
     getline(file, num_of_books); //get # of books
     int numOfBooks = stoi(num_of_books);
     for(int i = 0; i < numOfBooks; i++) { //get all book data
-        /* BOOK PRINT DATA GOE:
+        /* BOOK PRINT DATA GOES:
          * name, isbn, publisher, first author
          */
         string name;
@@ -77,7 +83,10 @@ Library::Library(string fileName) {
         book->addAuthor(make_shared<Author>(author));
         books->add(book);
     }
-
+    /*
+     * PATRONS FILE FORMAT:
+     * name, addr, phone#
+     */
     string num_of_patrons;
     getline(file,num_of_patrons);
     int numOfPatrons = stoi(num_of_patrons);
@@ -222,7 +231,10 @@ ostream& operator<<(ostream& os, Library& lib) {
     //print patrons
     os << lib.patrons.getLength() << std::endl;
     for(int i = 1; i <= lib.patrons.getLength(); i++) {
-        os << lib.patrons.getEntry(i) << std::endl;
+        auto patron = lib.patrons.getEntry(i);
+        os << patron->getName() << std::endl;
+        os << patron->getAddress() << std::endl;
+        os << patron->getPhone() << std::endl;
     }
     //assumes all books are available...
     return os;
