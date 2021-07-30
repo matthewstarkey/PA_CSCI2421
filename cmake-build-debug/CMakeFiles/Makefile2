@@ -54,19 +54,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /Users/starkey/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
+RM = /Users/starkey/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy"
+CMAKE_SOURCE_DIR = /Users/starkey/Desktop/CSCI2421/PA_CSCI2421
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/cmake-build-debug"
+CMAKE_BINARY_DIR = /Users/starkey/Desktop/CSCI2421/PA_CSCI2421/cmake-build-debug
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -93,14 +93,14 @@ clean: CMakeFiles/PA_CSCI2421.dir/clean
 CMakeFiles/PA_CSCI2421.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/PA_CSCI2421.dir/build.make CMakeFiles/PA_CSCI2421.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/PA_CSCI2421.dir/build.make CMakeFiles/PA_CSCI2421.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/cmake-build-debug/CMakeFiles" --progress-num=1,2 "Built target PA_CSCI2421"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target PA_CSCI2421"
 .PHONY : CMakeFiles/PA_CSCI2421.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/PA_CSCI2421.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/cmake-build-debug/CMakeFiles" 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/starkey/Desktop/CSCI2421/PA_CSCI2421/cmake-build-debug/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/PA_CSCI2421.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/cmake-build-debug/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/starkey/Desktop/CSCI2421/PA_CSCI2421/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/PA_CSCI2421.dir/rule
 
 # Convenience name for target.

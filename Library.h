@@ -25,6 +25,7 @@ private:
     shared_ptr<AVLTree<shared_ptr<Book>>> books;
     LinkedStack<shared_ptr<Book>> returnedBooks;
     LinkedList<shared_ptr<Patron>> patrons;
+    LinkedList<shared_ptr<Book>> tempBooks;
 protected:
     shared_ptr<Book> getBookByName(string bookName);
     shared_ptr<Patron> getPatronByName(string patronName);
@@ -32,6 +33,8 @@ protected:
     void printHelper(ostream& os, shared_ptr<Book> aBook);
     //helper function to search
     void searchHelper(LinkedList<shared_ptr<Book>>& foundBooks,string keyword, shared_ptr<Book> aBook);
+    void availableHelper(LinkedList<shared_ptr<Book>>& foundBooks, shared_ptr<Book> aBook);
+    void unavailableHelper(LinkedList<shared_ptr<Book>>& foundBooks, shared_ptr<Book> aBook);
 
 public:
     //getter/setters
@@ -61,6 +64,10 @@ public:
     //searches for books containing keyword, returns linkedlist of books found
     LinkedList<shared_ptr<Book>> search(string keyword);
     void emptyReturn();
+
+    LinkedList<shared_ptr<Book>> getAvailable();
+    LinkedList<shared_ptr<Book>> getUnavailable();
+
 
 
     friend ostream& operator<<(ostream& os, Library& lib);

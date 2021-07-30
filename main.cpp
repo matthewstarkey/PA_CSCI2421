@@ -85,6 +85,7 @@ int main() {
                 break;
             }
             case 2: {
+                cout << "Enter book name: ";
 
 
                 break;

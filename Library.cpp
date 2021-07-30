@@ -30,6 +30,7 @@ Library::Library(string name, string address, string office_hours) {
     this->books = make_shared<AVLTree<shared_ptr<Book>>>();
     this->patrons = LinkedList<shared_ptr<Patron>>();
     this->returnedBooks = LinkedStack<shared_ptr<Book>>();
+    this->tempBooks = LinkedList<shared_ptr<Book>>();
 }
 Library::Library(string fileName) {
     /*
@@ -86,7 +87,8 @@ Library::Library(string fileName) {
         auto patron = make_shared<Patron>(name,addr,phoneNumber);
         this->addPatron(patron);
     }
-
+    this->returnedBooks = LinkedStack<shared_ptr<Book>>();
+    this->tempBooks = LinkedList<shared_ptr<Book>>();
 }
 //functions:
 //adds book to library
@@ -191,7 +193,7 @@ ostream& operator<<(ostream& os, Library& lib) {
     os << lib.office_hours<< std::endl;
     //print books
     os << lib.books->getNumberOfNodes() << std::endl;
-    lib.books->inorderTraverse(lib.printHelper(os)); //TODO might need to fix this printHelper
+    lib.books->inorderTraverse(lib.printHelper(os&));
     //print patrons
     os << lib.patrons.getLength() << std::endl;
     for(int i = 1; i <= lib.patrons.getLength(); i++) {
@@ -221,9 +223,32 @@ void printHelper(ostream& os,shared_ptr<Book> aBook) {
 void Library::searchHelper(LinkedList<shared_ptr<Book>>& foundBooks,string keyword, shared_ptr<Book> aBook) {
     const std::regex txt(".*" + keyword + ".*");
     if(aBook->getAvailability()) {
-        if(regex_match(txt, aBook->getTitle())) { //if regex txt keyword matches book title
+        if(std::regex_match(aBook->getTitle(), txt)) { //if regex txt keyword matches book title
             foundBooks.insert(foundBooks.getLength() + 1, aBook); //yeet
         }
+    }
+}
+
+LinkedList<shared_ptr<Book>> Library::getAvailable() {
+    LinkedList<shared_ptr<Book>> foundBooks;
+    this->books->inorderTraverse(availableHelper(foundBooks&));
+    return foundBooks;
+}
+
+void Library::availableHelper(LinkedList<shared_ptr<Book>>& foundBooks, shared_ptr<Book> aBook) {
+    if(aBook->getAvailability()) {
+        foundBooks.insert(foundBooks.getLength() + 1, aBook);
+    }
+}
+
+LinkedList<shared_ptr<Book>> Library::getUnavailable() {
+    LinkedList<shared_ptr<Book>> foundBooks;
+    this->books->inorderTraverse(unavailableHelper(foundBooks&));
+    return foundBooks;
+}
+void Library::unavailableHelper(LinkedList<shared_ptr<Book>>& foundBooks, shared_ptr<Book> aBook){
+    if(!aBook->getAvailability()) {
+        foundBooks.insert(foundBooks.getLength() + 1, aBook);
     }
 }
 
