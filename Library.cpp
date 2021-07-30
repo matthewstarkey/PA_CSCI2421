@@ -23,6 +23,10 @@ void Library::setOfficeHours(const string &officeHours) {
     office_hours = officeHours;
 }
 
+LinkedList<shared_ptr<Patron>> Library::getPatrons() {
+    return patrons;
+}
+
 Library::Library(string name, string address, string office_hours) {
     this->name = name;
     this->address = address;
@@ -89,6 +93,7 @@ Library::Library(string fileName) {
     }
     this->returnedBooks = LinkedStack<shared_ptr<Book>>();
     this->tempBooks = LinkedList<shared_ptr<Book>>();
+
 }
 //functions:
 //adds book to library
@@ -97,8 +102,12 @@ bool Library::addBook(shared_ptr<Book> aBook) {
 }
 //removes book from library
 bool Library::removeBook(string bookName) {
-    auto aBook = getBookByName(bookName);
-    books->remove(aBook);
+    try{
+        auto aBook = getBookByName(bookName);
+        return books->remove(aBook);
+    } catch (NotFoundException nf) {
+        return false;
+    }
 
 }
 //add patron to patron list (able to checkout books and put on hold)
@@ -175,7 +184,7 @@ shared_ptr<Patron> Library::getPatronByName(string patronName) {
 /*
  * Prints library data to ostream object
  */
-ostream& operator<<(ostream& os, Library& lib) {
+ostream& Library::operator<<(ostream& os, Library& lib) {
     /*
      * FORMAT FOR LIBRARY FILE:
      * NAME
@@ -193,7 +202,8 @@ ostream& operator<<(ostream& os, Library& lib) {
     os << lib.office_hours<< std::endl;
     //print books
     os << lib.books->getNumberOfNodes() << std::endl;
-    lib.books->inorderTraverse(lib.printHelper(os&));
+    this->tempOs = os;
+    lib.books->inorderTraverse(printHelper);
     //print patrons
     os << lib.patrons.getLength() << std::endl;
     for(int i = 1; i <= lib.patrons.getLength(); i++) {
@@ -212,43 +222,44 @@ void Library::emptyReturn() {
 }
 
 LinkedList<shared_ptr<Book>> Library::search(string keyword) {
-    LinkedList<shared_ptr<Book>> foundBooks;
-    this->books->inorderTraverse(searchHelper(foundBooks&, keyword));
+    this->tempBooks = LinkedList<shared_ptr<Book>>();
+    this->tempKeyword = keyword;
+    this->books->inorderTraverse(searchHelper);
 }
 
-void printHelper(ostream& os,shared_ptr<Book> aBook) {
+void Library::printHelper(shared_ptr<Book> aBook) {
     //assumes all books will be available when saving library
-    os << aBook << std::endl;
+    this->tempOs << aBook << std::endl;
 }
-void Library::searchHelper(LinkedList<shared_ptr<Book>>& foundBooks,string keyword, shared_ptr<Book> aBook) {
-    const std::regex txt(".*" + keyword + ".*");
+void Library::searchHelper(shared_ptr<Book> aBook) {
+    const std::regex txt(".*" + this->tempKeyword + ".*");
     if(aBook->getAvailability()) {
         if(std::regex_match(aBook->getTitle(), txt)) { //if regex txt keyword matches book title
-            foundBooks.insert(foundBooks.getLength() + 1, aBook); //yeet
+            this->tempBooks.insert(this->tempBooks.getLength() + 1, aBook); //yeet
         }
     }
 }
 
 LinkedList<shared_ptr<Book>> Library::getAvailable() {
-    LinkedList<shared_ptr<Book>> foundBooks;
-    this->books->inorderTraverse(availableHelper(foundBooks&));
-    return foundBooks;
+    this->tempBooks = LinkedList<shared_ptr<Book>>();
+    this->books->inorderTraverse(availableHelper);
+    return tempBooks;
 }
 
-void Library::availableHelper(LinkedList<shared_ptr<Book>>& foundBooks, shared_ptr<Book> aBook) {
+void Library::availableHelper(shared_ptr<Book> aBook) {
     if(aBook->getAvailability()) {
-        foundBooks.insert(foundBooks.getLength() + 1, aBook);
+        this->tempBooks.insert(this->tempBooks.getLength() + 1, aBook);
     }
 }
 
 LinkedList<shared_ptr<Book>> Library::getUnavailable() {
-    LinkedList<shared_ptr<Book>> foundBooks;
-    this->books->inorderTraverse(unavailableHelper(foundBooks&));
-    return foundBooks;
+    this->tempBooks = LinkedList<shared_ptr<Book>>();
+    this->books->inorderTraverse(unavailableHelper);
+    return tempBooks;
 }
-void Library::unavailableHelper(LinkedList<shared_ptr<Book>>& foundBooks, shared_ptr<Book> aBook){
+void Library::unavailableHelper(shared_ptr<Book> aBook){
     if(!aBook->getAvailability()) {
-        foundBooks.insert(foundBooks.getLength() + 1, aBook);
+        this->tempBooks.insert(this->tempBooks.getLength() + 1, aBook);
     }
 }
 

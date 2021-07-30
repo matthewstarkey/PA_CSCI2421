@@ -9,6 +9,8 @@ int main() {
 
     Library library("CSE Library", "123 StreetName Ave.", "9am-9pm");
     int userChoice = 0;
+    const string fileName = "library.txt";
+    ofstream File(fileName);
     while (userChoice != 99) {
 
         cout << endl<< string(40, '=') << endl;
@@ -100,23 +102,59 @@ int main() {
                 break;
 
             case 5:
-
+                string keyword;
+                cout << "Enter a keyword to search by: ";
+                cin >> keyword;
+                auto books = library.search(keyword);
+                cout << "Books found were: " << endl;
+                for(int i = 1; i <= books.getLength(); i++) {
+                    auto book = books.getEntry(i);
+                    cout << book << endl;
+                }
                 break;
 
             case 6:
-
+                string patron_name;
+                string patron_address;
+                string patron_phone_number;
+                cout << "Enter Patron's name: ";
+                cin >> patron_name;
+                cout << endl << "Enter Patron's address: ";
+                cin >> patron_address;
+                cout  << endl << "Enter Patron's Phone #";
+                cin >> patron_phone_number;
+                auto patron = make_shared<Patron>(patron_name,patron_address,patron_phone_number);
+                library.addPatron(patron);
+                cout << "Patron added!" << endl;
                 break;
 
             case 7:
-
+                string patrons_name;
+                cout << "Enter Patron's name: " << endl;
+                cin >> patrons_name;
+                if(library.removePatron(patrons_name)) {
+                    cout << "Successfully removed patron" << endl;
+                } else {
+                    cout << "Failed to remove patron" << endl;
+                }
                 break;
 
             case 8:
-
+                auto patrons = library.getPatrons();
+                for(int i = 1; i <= patrons.getLength(); i++) {
+                    auto patron = patrons.getEntry(i);
+                    cout << i << ": " << patron << endl;
+                }
                 break;
 
             case 9:
-
+                string patronName;
+                string bookName;
+                cout << "Enter Patron's name: ";
+                cin >> patronName;
+                cout << "Enter Book name: ";
+                cin >> bookName;
+                library.checkout(patronName,bookName);
                 break;
 
             case 10:
@@ -128,11 +166,11 @@ int main() {
                 break;
 
             case 20:
-
+                File << library;
                 break;
 
             case 21:
-
+                Library library(fileName);
                 break;
 
         }

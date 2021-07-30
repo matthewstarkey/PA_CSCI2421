@@ -6,243 +6,249 @@
 
 #IncludeRegexTransform: 
 
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/AVLTree.cpp
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/AVLTree.cpp
 AVLTree.h
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/AVLTree.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/AVLTree.h
 
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/AVLTree.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/AVLTree.h
 memory
 -
 BinarySearchTree.h
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/BinarySearchTree.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/BinarySearchTree.h
 AVLTree.cpp
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/AVLTree.cpp
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/AVLTree.cpp
 
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/BinaryNode.cpp
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/BinaryNode.cpp
 BinaryNode.h
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/BinaryNode.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/BinaryNode.h
 
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/BinaryNode.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/BinaryNode.h
 memory
 -
 BinaryNode.cpp
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/BinaryNode.cpp
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/BinaryNode.cpp
 
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/BinaryNodeTree.cpp
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/BinaryNodeTree.cpp
 BinaryNodeTree.h
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/BinaryNodeTree.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/BinaryNodeTree.h
 
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/BinaryNodeTree.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/BinaryNodeTree.h
 memory
 -
 BinaryTreeInterface.h
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/BinaryTreeInterface.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/BinaryTreeInterface.h
 BinaryNode.h
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/BinaryNode.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/BinaryNode.h
 PrecondViolatedExcep.h
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/PrecondViolatedExcep.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/PrecondViolatedExcep.h
 NotFoundException.h
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/NotFoundException.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/NotFoundException.h
 BinaryNodeTree.cpp
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/BinaryNodeTree.cpp
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/BinaryNodeTree.cpp
 
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/BinarySearchTree.cpp
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/BinarySearchTree.cpp
 BinarySearchTree.h
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/BinarySearchTree.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/BinarySearchTree.h
 
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/BinarySearchTree.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/BinarySearchTree.h
 memory
 -
 BinaryTreeInterface.h
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/BinaryTreeInterface.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/BinaryTreeInterface.h
 BinaryNodeTree.h
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/BinaryNodeTree.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/BinaryNodeTree.h
 BinaryNode.h
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/BinaryNode.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/BinaryNode.h
 NotFoundException.h
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/NotFoundException.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/NotFoundException.h
 PrecondViolatedExcep.h
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/PrecondViolatedExcep.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/PrecondViolatedExcep.h
 BinarySearchTree.cpp
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/BinarySearchTree.cpp
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/BinarySearchTree.cpp
 
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/BinaryTreeInterface.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/BinaryTreeInterface.h
 NotFoundException.h
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/NotFoundException.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/NotFoundException.h
 
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/LinkedList.cpp
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/LinkedList.cpp
 LinkedList.h
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/LinkedList.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/LinkedList.h
 cassert
 -
 
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/LinkedList.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/LinkedList.h
 memory
 -
 ListInterface.h
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/ListInterface.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/ListInterface.h
 Node.h
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/Node.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/Node.h
 PrecondViolatedExcep.h
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/PrecondViolatedExcep.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/PrecondViolatedExcep.h
 LinkedList.cpp
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/LinkedList.cpp
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/LinkedList.cpp
 
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/LinkedQueue.cpp
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/LinkedQueue.cpp
 memory
 -
 
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/LinkedQueue.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/LinkedQueue.h
 memory
 -
 QueueInterface.h
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/QueueInterface.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/QueueInterface.h
 Node.h
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/Node.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/Node.h
 PrecondViolatedExcep.h
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/PrecondViolatedExcep.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/PrecondViolatedExcep.h
 LinkedQueue.cpp
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/LinkedQueue.cpp
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/LinkedQueue.cpp
 
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/LinkedStack.cpp
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/LinkedStack.cpp
 LinkedStack.h
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/LinkedStack.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/LinkedStack.h
 
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/LinkedStack.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/LinkedStack.h
 StackInterface.h
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/StackInterface.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/StackInterface.h
 Node.h
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/Node.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/Node.h
 PrecondViolatedExcep.h
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/PrecondViolatedExcep.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/PrecondViolatedExcep.h
 LinkedStack.cpp
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/LinkedStack.cpp
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/LinkedStack.cpp
 
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/ListInterface.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/ListInterface.h
 
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/Node.cpp
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/Node.cpp
 Node.h
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/Node.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/Node.h
 
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/Node.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/Node.h
 memory
 -
 Node.cpp
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/Node.cpp
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/Node.cpp
 
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/NotFoundException.cpp
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/NotFoundException.cpp
 NotFoundException.h
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/NotFoundException.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/NotFoundException.h
 
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/NotFoundException.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/NotFoundException.h
 stdexcept
 -
 string
 -
 NotFoundException.cpp
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/NotFoundException.cpp
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/NotFoundException.cpp
 
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/PrecondViolatedExcep.cpp
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/PrecondViolatedExcep.cpp
 PrecondViolatedExcep.h
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/PrecondViolatedExcep.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/PrecondViolatedExcep.h
 
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/PrecondViolatedExcep.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/PrecondViolatedExcep.h
 stdexcept
 -
 string
 -
 PrecondViolatedExcep.cpp
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/PrecondViolatedExcep.cpp
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/PrecondViolatedExcep.cpp
 
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/QueueInterface.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/QueueInterface.h
 
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/StackInterface.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/StackInterface.h
 
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/Author.cpp
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/Author.cpp
 Author.h
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/Author.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/Author.h
 
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/Author.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/Author.h
 string
 -
 Author.cpp
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/Author.cpp
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/Author.cpp
 
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/Book.cpp
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/Book.cpp
 Book.h
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/Book.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/Book.h
 Patron.h
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/Patron.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/Patron.h
 
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/Book.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/Book.h
 Author.h
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/Author.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/Author.h
 Date.h
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/Date.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/Date.h
 string
 -
 memory
 -
 ADTs/LinkedQueue.h
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/LinkedQueue.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/LinkedQueue.h
 ADTs/LinkedList.h
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/LinkedList.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/LinkedList.h
 Book.cpp
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/Book.cpp
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/Book.cpp
 
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/Date.cpp
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/Date.cpp
 Date.h
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/Date.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/Date.h
 
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/Date.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/Date.h
 Date.cpp
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/Date.cpp
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/Date.cpp
 
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/Library.cpp
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/Library.cpp
 Library.h
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/Library.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/Library.h
 
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/Library.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/Library.h
+iostream
+-
+fstream
+-
 string
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/string
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/string
 memory
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/memory
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/memory
+regex
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/regex
 Book.h
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/Book.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/Book.h
 Patron.h
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/Patron.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/Patron.h
 Author.h
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/Author.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/Author.h
 Date.h
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/Date.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/Date.h
 ADTs/LinkedList.h
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/LinkedList.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/LinkedList.h
 ADTs/NotFoundException.h
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/NotFoundException.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/NotFoundException.h
 ADTs/LinkedStack.h
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/LinkedStack.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/LinkedStack.h
 ADTs/AVLTree.h
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/AVLTree.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/AVLTree.h
 Library.cpp
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/Library.cpp
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/Library.cpp
 
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/Patron.cpp
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/Patron.cpp
 Patron.h
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/Patron.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/Patron.h
 Book.h
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/Book.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/Book.h
 
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/Patron.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/Patron.h
 string
 -
 ADTs/LinkedStack.h
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/ADTs/LinkedStack.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/ADTs/LinkedStack.h
 Patron.cpp
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/Patron.cpp
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/Patron.cpp
 
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/main.cpp
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/main.cpp
 iostream
 -
 Library.h
-/Users/kaimarshall/CLionProjects/Data Struc Projects:Labs/PA_CSCI2421 copy/Library.h
+/Users/starkey/Desktop/CSCI2421/PA_CSCI2421/Library.h
 

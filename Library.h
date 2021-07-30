@@ -26,15 +26,18 @@ private:
     LinkedStack<shared_ptr<Book>> returnedBooks;
     LinkedList<shared_ptr<Patron>> patrons;
     LinkedList<shared_ptr<Book>> tempBooks;
+    string tempKeyword;
+
+    //helper function to print books
+    void printHelper(shared_ptr<Book> aBook);
+    //helper function to search
+    void searchHelper(shared_ptr<Book> aBook);
+    void availableHelper(shared_ptr<Book> aBook);
+    void unavailableHelper(shared_ptr<Book> aBook);
+
 protected:
     shared_ptr<Book> getBookByName(string bookName);
     shared_ptr<Patron> getPatronByName(string patronName);
-    //helper function to print books
-    void printHelper(ostream& os, shared_ptr<Book> aBook);
-    //helper function to search
-    void searchHelper(LinkedList<shared_ptr<Book>>& foundBooks,string keyword, shared_ptr<Book> aBook);
-    void availableHelper(LinkedList<shared_ptr<Book>>& foundBooks, shared_ptr<Book> aBook);
-    void unavailableHelper(LinkedList<shared_ptr<Book>>& foundBooks, shared_ptr<Book> aBook);
 
 public:
     //getter/setters
@@ -57,6 +60,8 @@ public:
     bool addPatron(shared_ptr<Patron> aPatron);
     //removes patron from list
     bool removePatron(string patronName);
+    //returns list of patrons
+    LinkedList<shared_ptr<Patron>> getPatrons();
     //returns book to dropoff box
     bool dropoff(string bookName, string patronName);
     //checks out book to patron OR adds patron to hold queue
@@ -67,7 +72,6 @@ public:
 
     LinkedList<shared_ptr<Book>> getAvailable();
     LinkedList<shared_ptr<Book>> getUnavailable();
-
 
 
     friend ostream& operator<<(ostream& os, Library& lib);
