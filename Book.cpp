@@ -56,7 +56,10 @@ void Book::setAvailable(bool avail){
 }
 
 ostream &operator<<(ostream &os, const Book &book) {
-    os << book.title << " by "<< book.authors->getEntry(1)->getName() ;
+    os << book.title << endl;
+    os << book.isbn << endl;
+    os << book.publisher << endl;
+    os << book.authors->getEntry(1)->getName() << endl;  //prints first author
     return os;
 }
 

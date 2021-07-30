@@ -80,6 +80,7 @@ int main() {
                 cin >> day;
                 cout << "Year: ";
                 cin >> year;
+
                 auto aDate = make_shared<Date>(month, day, year);
                 newBook->setDate(aDate);
 

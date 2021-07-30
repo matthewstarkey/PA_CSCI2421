@@ -37,8 +37,6 @@ Library::Library(string name, string address, string office_hours) {
 }
 Library::Library(string fileName) {
     /*
-     * TODO: IMPLEMENT CONSTRUCTOR FROM FILE
-     * FORMAT FOR LIBRARY FILE:
      * NAME
      * ADDRESS
      * OFFICE HOURS
@@ -65,22 +63,25 @@ Library::Library(string fileName) {
     int numOfBooks = stoi(num_of_books);
     for(int i = 0; i < numOfBooks; i++) { //get all book data
         /* BOOK PRINT DATA GOE:
-         * name, isbn, publisher
+         * name, isbn, publisher, first author
          */
         string name;
         string isbn;
         string publisher;
+        string author;
         getline(file, name);
         getline(file, isbn);
         getline(file, publisher);
+        getline(file, author);
         auto book = make_shared<Book>(name,isbn,publisher);
-        this->addBook(book);
+        book->addAuthor(make_shared<Author>(author));
+        books->add(book);
     }
 
     string num_of_patrons;
     getline(file,num_of_patrons);
     int numOfPatrons = stoi(num_of_patrons);
-    for(int i = 1; i <= numOfPatrons; i++) { //yeet
+    for(int i = 0; i < numOfPatrons; i++) {
         string name;
         string addr;
         string phoneNumber;
@@ -88,9 +89,9 @@ Library::Library(string fileName) {
         getline(file, addr);
         getline(file, phoneNumber); //assumes no books checked out
         auto patron = make_shared<Patron>(name,addr,phoneNumber);
-        this->addPatron(patron);
+        patrons.insert(patrons.getLength() + 1, patron);
     }
-    this->returnedBooks = LinkedStack<shared_ptr<Book>>();
+    file.close();
 
 }
 //functions:
