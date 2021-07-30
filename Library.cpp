@@ -184,7 +184,7 @@ shared_ptr<Patron> Library::getPatronByName(string patronName) {
 /*
  * Prints library data to ostream object
  */
-ostream& Library::operator<<(ostream& os, Library& lib) {
+ostream& operator<<(ostream& os, Library& lib) {
     /*
      * FORMAT FOR LIBRARY FILE:
      * NAME
@@ -231,46 +231,22 @@ void Library::emptyReturn() {
 }
 
 LinkedList<shared_ptr<Book>> Library::search(string keyword) {
-    this->tempBooks = LinkedList<shared_ptr<Book>>();
-    this->tempKeyword = keyword;
-    this->books->inorderTraverse(searchHelper);
+    keywordForSearching = keyword;
+    foundBooksFromSearch->clear();
+    this->books->inorderTraverse(aSearchHelper);
+    return *foundBooksFromSearch;
 }
 
-void Library::printHelper(shared_ptr<Book> aBook) {
-    //assumes all books will be available when saving library
-    this->tempOs << aBook << std::endl;
-}
-
-void Library::searchHelper(shared_ptr<Book> aBook) {
-    const std::regex txt(".*" + this->tempKeyword + ".*");
-    if(aBook->getAvailability()) {
-        if(std::regex_match(aBook->getTitle(), txt)) { //if regex txt keyword matches book title
-            this->tempBooks.insert(this->tempBooks.getLength() + 1, aBook); //yeet
-        }
-    }
-}
 
 LinkedList<shared_ptr<Book>> Library::getAvailable() {
-    this->tempBooks = LinkedList<shared_ptr<Book>>();
-    this->books->inorderTraverse(availableHelper);
-    return tempBooks;
-}
-
-void Library::availableHelper(shared_ptr<Book> aBook) {
-    if(aBook->getAvailability()) {
-        this->tempBooks.insert(this->tempBooks.getLength() + 1, aBook);
-    }
+    availableBooks->clear();
+    this->books->inorderTraverse(booksToAvailableBooks);
+    return *availableBooks;
 }
 
 LinkedList<shared_ptr<Book>> Library::getUnavailable() {
-    this->tempBooks = LinkedList<shared_ptr<Book>>();
-    this->books->inorderTraverse(unavailableHelper);
-    return tempBooks;
+    unavailableBooks->clear();
+    this->books->inorderTraverse(booksToUnavailableBooks);
+    return *unavailableBooks;
 }
-void Library::unavailableHelper(shared_ptr<Book> aBook){
-    if(!aBook->getAvailability()) {
-        this->tempBooks.insert(this->tempBooks.getLength() + 1, aBook);
-    }
-}
-
 

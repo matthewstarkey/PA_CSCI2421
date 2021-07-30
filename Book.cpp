@@ -56,7 +56,7 @@ void Book::setAvailable(bool avail){
 }
 
 ostream &operator<<(ostream &os, const Book &book) {
-    os << book.title;
+    os << book.title << " by "<< book.authors->getEntry(0)->getName() ;
     return os;
 }
 
